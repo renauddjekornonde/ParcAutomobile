@@ -1,0 +1,10 @@
+body{
+    background-image: url(images/back.jpg);
+}
+footer{
+    background-color: #313F96;
+    color: whitesmoke;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    font-size: large;
+}
