@@ -629,14 +629,19 @@
      width: 140px;
 }
  .wed-rights{
-     background: #01172f;
+     background: #313f96;
+     margin-top: 10px;
 }
  .wed-rights p{
      text-align: center;
      margin-bottom: 0px;
-     padding: 8px;
-     color: #adadad;
-     font-size: 13px;
+     padding: 10px;
+     color: #fff;
+     font-size: 18px;
+     line-height: 22px;
+}
+.copy-right p a:hover{
+    color: darkgoldenrod;
 }
  .sprite-android{
      background: url(../images/sprite.png) no-repeat -12px -15px;
@@ -875,6 +880,8 @@
     background-color: #f6d601;
     border-radius: 30px;
     color: #000;
+    /* margin-bottom: 5px; */
+    margin-top: 0px;
 }
 .main-menu ul li .sign_btn a {
     display: inline-block;
@@ -883,7 +890,7 @@
     font-size: 17px;
     text-align: center;
     margin-right: 20px;
-    text-transform: uppercase;
+  
 }
 
 .main-menu ul li .sign_btn a:hover{
@@ -947,17 +954,16 @@
      float: right;
 }
  .main-menu ul li{
-     float: left;
+     /* float: left; */
      display: inline-block;
      margin-top: 10px;
 }
  .main-menu ul li a{
      color: #fff;
-     padding: 0 25px;
-     line-height: 20px;
+     padding: 0 30px;
+     line-height: 25px;
      font-size: 16px;
      font-weight: 600;
-    text-transform: uppercase;
     
     
      position:relative;
@@ -5546,7 +5552,7 @@ input:not(:focus):valid ~ .floating-label{
 /* =  BLOG PAGE CSS Styles
 /*-------------------------------------------------*/
 .pg-blog{
-    width: 70%;
+    width: 100%;
     margin: 0 auto;	
 }
 .pg-blog ul li{
@@ -5559,6 +5565,7 @@ input:not(:focus):valid ~ .floating-label{
 .pg-blog img{
     width: 100%;
     margin-bottom: 20px;
+    height: 500px;
 }
 .pg-blog p{}
 .pg-blog-reg{
