@@ -24,3 +24,13 @@ Route::get('/admin', function () {
 Route::get('/detail', function () {
     return view('home.detailVoiture');
 });
+
+Route::get('/connexion', function () {
+    return view('pages.connexion');
+});
+Route::get('/contact', function () {
+    return view('pages.contact');
+});
+Route::get('/services', function () {
+    return view('pages.services');
+});

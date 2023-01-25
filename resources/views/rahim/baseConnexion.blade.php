@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -14,16 +12,16 @@
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
-      <!-- FAV ICON(BROWSER TAB ICON) -->
-      <link rel="shortcut icon" href="images/fav.ico" type="image/x-icon">
+      <!-- FAV ICON(BROWSER TAB ICON)  -->
+      <link rel="shortcut icon" href={{asset("assetsA/images/fav.ico")}} type="image/x-icon">
       <!-- bootstrap css -->
-      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href={{asset("assetsA/css/bootstrap.min.css")}}>
       <!-- style css -->
-      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href={{asset("assetsA/css/style.css")}}>
       <!-- Responsive-->
-      <link rel="stylesheet" href="css/responsive.css">
+      <link rel="stylesheet" href={{asset("assetsA/css/responsive.css")}}>
       <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <link rel="stylesheet" href={{asset("assetsA/css/jquery.mCustomScrollbar.min.css")}}>
       <!-- Tweaks for older IEs-->
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
@@ -32,7 +30,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
       <style>
         body{
-            background-image: url(images/Image.jpeg);
+            background-image: url(assetsA/images/Image.jpeg);
         }
         button{
             background-color: #f6d601;
@@ -52,7 +50,7 @@
                      <div class="full">
                         <div class="center-desk">
                            <div class="logo">
-                              <a href="index.html"><img src="images/logo1.png" alt="#" /></a>
+                              <a href="index.html"><img src={{asset("assetsA/images/logo1.png")}} alt="#" /></a>
                            </div>
                         </div>
                      </div>
@@ -83,36 +81,6 @@
          </div>
       </header>
 
-    <body class="main-layout">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-                  <div class="card card-signin my-5">
-                    <div class="card-body">
-                    <h5 class="card-title text-center">Se connecter</h5>
-                      <form class="form-signin">
-                        <div class="form-label-group">
-                        <label for="inputEmail">Email</label>
-                          <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                        </div>
-
-                        <div class="form-label-group">
-                            <label for="inputPassword">Password</label>
-                          <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                        </div>
-
-                        <div class="custom-control custom-checkbox mb-3">
-                          <input type="checkbox" class="custom-control-input" id="customCheck1">
-                          <label class="custom-control-label" for="customCheck1">Remember password</label>
-                        </div>
-                        <button type="submit" class="btn btn-lg text-uppercase btn-block" >Se connecter</button>
-                        <hr class="my-4">
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </body>
+@yield("container")
 </html>
 
