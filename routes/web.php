@@ -17,9 +17,14 @@ Route::get('/', function () {
     return view('home.home');
 });
 
-Route::get('/admin', function () {
+Route::get('/abdou', function () {
     return view('admin.index');
 });
+
+Route::get('/detail', function () {
+    return view('home.detailVoiture');
+});
+
 
 Route::get('/detail', function () {
     return view('home.detailVoiture');
