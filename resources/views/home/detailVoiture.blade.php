@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <title>Education Master Template</title>
     <!-- META TAGS -->
@@ -11,17 +9,17 @@
     <meta name="description" content="Education master is one of the best educational html template, it's suitable for all education websites like university,college,school,online education,tution center,distance education,computer education">
     <meta name="keyword" content="education html template, university template, college template, school template, online education template, tution center template">
     <!-- FAV ICON(BROWSER TAB ICON) -->
-    <link rel="shortcut icon" href="images/fav.ico" type="image/x-icon">
+    <link rel="shortcut icon" href={{asset("assetAdmin/images/fav.ico")}} type="image/x-icon">
     <!-- GOOGLE FONT -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CJosefin+Sans:600,700" rel="stylesheet">
     <!-- FONTAWESOME ICONS -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href={{asset("assetAdmin/css/font-awesome.min.css")}}>
     <!-- ALL CSS FILES -->
-    <link href="css/materialize.css" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
+    <link href={{asset("assetAdmin/css/materialize.css")}} rel="stylesheet">
+    <link href={{asset("assetAdmin/css/bootstrap.css")}} rel="stylesheet" />
+    <link href={{asset("assetAdmin/css/style.css")}} rel="stylesheet" />
     <!-- RESPONSIVE.CSS ONLY FOR MOBILE AND TABLET VIEWS -->
-    <link href="css/style-mob.css" rel="stylesheet" />
+    <link href={{asset("assetAdmin/css/style-mob.css")}} rel="stylesheet" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -39,7 +37,7 @@
                 <div class="ed-mm-left">
                     <div class="wed-logo">
                         <a href="index-2.html">
-                            <img src="images/logo1.png" alt="" />
+                            <img src={{asset("assetAdmin/images/logo1.png")}} alt="" />
                             <!-- Blog News -->
 						</a>
                     </div>
@@ -111,7 +109,7 @@
                     <div class="col-md-12">
                         <div class="wed-logo">
                             <a href="index-2.html">
-                                <img src="images/logo1.png" alt="" />
+                                <img src={{asset("assetAdmin/images/logo1.png")}} alt="" />
                             </a>
                         </div>
                         <div class="main-menu">
@@ -161,7 +159,7 @@
                                     <a href="event-register.html">
                                         <h4>Nom de la Voiture</h4>
                                     </a>
-                                    <img src="images/blog/6.jpg" alt="">
+                                    <img src={{asset("assetAdmin/images/blog/6.jpg")}} alt="">
                                 </div> 
                                 <div class="pg-eve-reg pg-blog-reg">
                                     <a href="blog-details.html">Commander</a>
@@ -235,7 +233,7 @@
                                 <div class="me-auto">
                                 300
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                         <div id="hom_log" class="col s12">
                         </div>
@@ -262,7 +260,7 @@
                         <!-- <img src="images/slider/4.jpg" alt=""> -->
                         <div class="home-top-cour col-6">
                             <!--POPULAR COURSES IMAGE-->
-                            <div class="col-md-3"> <img src="images/course/sm-4.jpg" alt=""> </div>
+                            <div class="col-md-3"> <img src={{asset("assetAdmin/images/course/sm-4.jpg")}} alt=""> </div>
                             <!--POPULAR COURSES: CONTENT-->
                             <div class="col-md-9 home-top-cour-desc">
                                 <a href="course-details.html">
@@ -284,7 +282,7 @@
                         <!-- <img src="images/slider/6.jpg" alt="">--> 
                         <div class="home-top-cour">
                             <!--POPULAR COURSES IMAGE-->
-                            <div class="col-md-3"> <img src="images/course/sm-4.jpg" alt=""> </div>
+                            <div class="col-md-3"> <img src={{asset("assetAdmin/images/course/sm-4.jpg")}} alt=""> </div>
                             <!--POPULAR COURSES: CONTENT-->
                             <div class="col-md-9 home-top-cour-desc">
                                 <a href="course-details.html">
@@ -333,17 +331,17 @@
         <div class="container">
             <div class="row">
                 <div class="copy-right">
-                    <p>© 2019 All Rights Reserved. Design by <a href="https://html.design/" style="color: white;font-size: 18px;line-height: 22px; "> Free Html Templates</a></p>
+                    <p>© 2019 All Rights Reserved. Design by <a href="https://html.design/" style="color: white;font-size: 18px;line-height: 22px; "> ESITECAR</a></p>
                 </div>
             </div>
         </div>
     </section>
 
     <!--Import jQuery before materialize.js-->
-    <script src="js/main.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/materialize.min.js"></script>
-    <script src="js/custom.js"></script>
+    <script src={{asset("assetAdmin/js/main.min.js")}}></script>
+    <script src={{asset("assetAdmin/js/bootstrap.min.js")}}></script>
+    <script src={{asset("assetAdmin/js/materialize.min.js")}}></script>
+    <script src={{asset("assetAdmin/js/custom.js")}}></script>
 </body>
 
 
