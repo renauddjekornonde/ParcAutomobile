@@ -25,6 +25,9 @@ class User extends Authenticatable
         'adresse',
         'cni',
     ];
+    public function commandeUsers(){
+        return $this->belongsTo(Commande::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

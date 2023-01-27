@@ -21,4 +21,7 @@ public function photo(){
 public function admin(){
     return $this->beLongsTo(Admin::class);
 }
+public function commande(){
+    return $this->beLongsTo(Commande::class);
+}
 }

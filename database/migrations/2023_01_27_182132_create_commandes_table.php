@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('voitures', function (Blueprint $table) {
+        Schema::create('commandes', function (Blueprint $table) {
             $table->id();
-            $table->string('marque');
-            $table->string('model');
-            $table->integer('statut')->default(0);
+            $table->unsignedBigInteger('id_voiture');
+            $table->foreign('id_voiture')->references('id')->on('voitures')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('id_user');
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('voitures');
+        Schema::dropIfExists('commandes');
     }
 };

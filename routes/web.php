@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\VoitureController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,3 +36,7 @@ Route::get('/contact', function () {
 Route::get('/services', function () {
     return view('pages.services');
 });
+
+Route::get('/createVoiture', [VoitureController::class, 'create'])->name('createVoiture');
+
+Route::post('/storeVoiture', [VoitureController::class, 'store'])->name('storeVoiture');
