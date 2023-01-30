@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('home.home');
 });
 
-Route::get('/abdou', function () {
+Route::get('/admin', function () {
     return view('admin.index');
 });
 
@@ -38,5 +38,12 @@ Route::get('/services', function () {
 });
 
 Route::get('/createVoiture', [VoitureController::class, 'create'])->name('createVoiture');
+Route::get('/indexAdmin', [VoitureController::class, 'index'])->name('indexAdmin');
 
-Route::post('/storeVoiture', [VoitureController::class, 'store'])->name('storeVoiture');
+Route::match(['get', 'post'], '/storeVoiture', [VoitureController::class, 'store'])->name('storeVoiture');
+
+Route::get('/showVoiture/{id}', [VoitureController::class, 'show'])->name('showVoiture');
+Route::get('/editerVoiture/{id}', [VoitureController::class, 'editer'])->name('editerVoiture');
+Route::patch('/updateVoiture/{id}', [VoitureController::class, 'update'])->name('updateVoiture');
+Route::patch('/setStatut/{id}', [VoitureController::class, 'setStatut'])->name('setStatut');
+Route::delete('/deleteVoiture/{id}', [VoitureController::class, 'destroy'])->name('destroyVoiture');

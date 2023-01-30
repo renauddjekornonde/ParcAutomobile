@@ -16,6 +16,6 @@ class Admin extends Model
         'updated_at'
     ];
     public function voitureAdmin(){
-        return $this->hasMany(Voiture::class);
+        return $this->hasMany(Voitures::class);
     }
 }

@@ -6,7 +6,7 @@
  * Last Changes: 10 jan 2018
  * Author: RN53 Themes
  * Email:      rn53themes@gmail.com
- * Website:    http://www.rn53themes.net 
+ * Website:    http://www.rn53themes.net
  -----------------------------------------------*/
 /*-------------------------------------------------
  =  Table of Css
@@ -14,25 +14,25 @@
 	1.COLLEGE
 	2.MAIN MENU
 	3.HOME PAGE: PART ONE
-	4.HOME PAGE: COURSE 
+	4.HOME PAGE: COURSE
 	5.HOME PAGE: EVENT
 	6.HOME PAGE: TAB AND ENQUIRY
 	7.SEARCH BOX
 	8.SLIDER
-	9.HOME PAGE: QUICK LINK 
-	10.TOP COURSES 
-	11.BOTTOM BOOKING 
+	9.HOME PAGE: QUICK LINK
+	10.TOP COURSES
+	11.BOTTOM BOOKING
 	12.BREADCRUM
 	13.COURSE DETAILS
 	14.USER DASHBOARD
 	15.FOOTER GALLERY AND BLOG
-	16.REGISTER LOGIN POPUPS 
+	16.REGISTER LOGIN POPUPS
 	17.REGISTER LOGIN POPUPS
-	18.STUDENT DASHBOARD 
-	19.STUDENT DASHBOARD - COURSES 
-	20.STUDENT DASHBOARD - TIME LINE 
+	18.STUDENT DASHBOARD
+	19.STUDENT DASHBOARD - COURSES
+	20.STUDENT DASHBOARD - TIME LINE
 	21.MEGA MENU
-	22.SOCIAL MEDIA SHARE 
+	22.SOCIAL MEDIA SHARE
 	23.SOCIAL MEDIA SHARE
 	24.ABOUT US
 	25.AWARDS
@@ -890,7 +890,7 @@
     font-size: 17px;
     text-align: center;
     margin-right: 20px;
-  
+
 }
 
 .main-menu ul li .sign_btn a:hover{
@@ -964,8 +964,8 @@
      line-height: 25px;
      font-size: 16px;
      font-weight: 600;
-    
-    
+
+
      position:relative;
 }
  .main-menu ul li a:hover{
@@ -1045,7 +1045,7 @@
 }
 
 /*-------------------------------------------------*/
-/* =  3.HOME PAGE: PART ONE 
+/* =  3.HOME PAGE: PART ONE
 /*-------------------------------------------------*/
  .hom-p1{
      position: relative;
@@ -1095,7 +1095,7 @@
      font-size: 12px;
 }
 /*-------------------------------------------------*/
-/* =  4.HOME PAGE: COURSE 
+/* =  4.HOME PAGE: COURSE
 /*-------------------------------------------------*/
  .pop-cour{
      background: #f5f5f5;
@@ -1304,7 +1304,7 @@
      text-overflow: ellipsis;
      white-space: pre;
      overflow: hidden;
-	    letter-spacing: 0px; 
+	    letter-spacing: 0px;
 }
  .ho-ev-link p{
      color: #203245;
@@ -1768,7 +1768,7 @@
 }
 
 /*-------------------------------------------------*/
-/* =  9.HOME PAGE: QUICK LINK 
+/* =  9.HOME PAGE: QUICK LINK
 /*-------------------------------------------------*/
  .wed-hom-ser{
     /* position: absolute;
@@ -1841,7 +1841,7 @@
 }
 
 /*-------------------------------------------------*/
-/* =  10.TOP COURSES 
+/* =  10.TOP COURSES
 /*-------------------------------------------------*/
  .ed-course{
 }
@@ -1890,7 +1890,7 @@
 }
 
 /*-------------------------------------------------*/
-/* =  11.BOTTOM BOOKING 
+/* =  11.BOTTOM BOOKING
 /*-------------------------------------------------*/
  .full-bot-book{
      background: #f9bb09;
@@ -2241,7 +2241,7 @@
 }
 
 /*-------------------------------------------------*/
-/* =  14.USER DASHBOARD 
+/* =  14.USER DASHBOARD
 /*-------------------------------------------------*/
  .pro-cover{
      background: url('../images/pro-bg.jpg') no-repeat center center;
@@ -2409,7 +2409,7 @@
 }
 
 /*-------------------------------------------------*/
-/* =  15.FOOTER GALLERY AND BLOG 
+/* =  15.FOOTER GALLERY AND BLOG
 /*-------------------------------------------------*/
  .bot-gal {
 }
@@ -2507,7 +2507,7 @@
      margin-bottom: 0px;
 }
 /*-------------------------------------------------*/
-/* = 16.REGISTER LOGIN POPUPS 
+/* = 16.REGISTER LOGIN POPUPS
 /*-------------------------------------------------*/
  .log-in-pop {
      position: relative;
@@ -2666,7 +2666,7 @@
  .log-ch-bx p input {
 }
 /*-------------------------------------------------*/
-/* = 17.REGISTER LOGIN POPUPS 
+/* = 17.REGISTER LOGIN POPUPS
 /*-------------------------------------------------*/
  .in2-top-logo{
      background: #313f96;
@@ -2755,7 +2755,7 @@
      font-family: 'Open Sans', sans-serif;
 }
 /*-------------------------------------------------*/
-/* = 18.STUDENT DASHBOARD 
+/* = 18.STUDENT DASHBOARD
 /*-------------------------------------------------*/
  .stu-db{
      position: relative;
@@ -2808,7 +2808,7 @@
      margin-bottom: 15px;
 }
 /*-------------------------------------------------*/
-/* = 19.STUDENT DASHBOARD - COURSES 
+/* = 19.STUDENT DASHBOARD - COURSES
 /*-------------------------------------------------*/
  .list-mig-like-com {
      position: relative;
@@ -2938,7 +2938,7 @@
      font-weight: 600;
 }
 /*-------------------------------------------------*/
-/* = 20.STUDENT DASHBOARD - TIME LINE 
+/* = 20.STUDENT DASHBOARD - TIME LINE
 /*-------------------------------------------------*/
  .sdb-cl-tim{
      position: relative;
@@ -3062,7 +3062,7 @@
      background-color: #ededed;
 }
 /*-------------------------------------------------*/
-/* = 21.MEGA MENU 
+/* = 21.MEGA MENU
 /*-------------------------------------------------*/
  .mm-pos{
      position: absolute;
@@ -3105,14 +3105,14 @@
      display: block;
      width: 100%;
 	 position: relative;
-     padding-left: 15px;		
+     padding-left: 15px;
 }
  .mm1-com ul li a{
      font-size: 14px;
      color: #203245;
      line-height: 31px;
      padding: 5px;
-	text-transform: capitalize; 
+	text-transform: capitalize;
 }
  .mm1-com ul li a:hover{
 }
@@ -3193,7 +3193,7 @@ top: 5px;
 left: 0;
 }
 /*-------------------------------------------------*/
-/* = 22.SOCIAL MEDIA SHARE 
+/* = 22.SOCIAL MEDIA SHARE
 /*-------------------------------------------------*/
  .share-btn {
      margin-top: 10px;
@@ -3230,7 +3230,7 @@ left: 0;
      padding-right: 5px;
 }
 /*-------------------------------------------------*/
-/*=  23.SOCIAL MEDIA SHARE 
+/*=  23.SOCIAL MEDIA SHARE
 /*-------------------------------------------------*/
  .icon-float {
      position: fixed;
@@ -3298,7 +3298,7 @@ left: 0;
      border-bottom-left-radius: 5px;
 }
 /*-------------------------------------------------*/
-/*= 24.ABOUT US 
+/*= 24.ABOUT US
 /*-------------------------------------------------*/
  .about-sp{
      padding: 0px 30px;
@@ -3369,7 +3369,7 @@ left: 0;
      line-height: 24px;
 }
 /*-------------------------------------------------*/
-/* = 25.AWARDS 
+/* = 25.AWARDS
 /*-------------------------------------------------*/
  .s18-agenda{
      background: #f4f4f4;
@@ -3536,7 +3536,7 @@ left: 0;
      color:#fff;
 }
 /*-------------------------------------------------*/
-/* = 26.ADMISSIONN 
+/* = 26.ADMISSIONN
 /*-------------------------------------------------*/
  .quote-title {
      text-align: center;
@@ -3728,7 +3728,7 @@ left: 0;
      color: #000;
 }
  .n-form-com form input::placeholder{
-     color:#000 
+     color:#000
 }
  .n-form-com form label{
      font-size: 14px;
@@ -3771,7 +3771,7 @@ left: 0;
      margin-top: 7px;
 }
 /*-------------------------------------------------*/
-/* = 27.SEMINAR 
+/* = 27.SEMINAR
 /*-------------------------------------------------*/
  .p-semi{
      background: url(../images/seminar-bg.jpg);
@@ -3840,7 +3840,7 @@ left: 0;
      padding-left: 10px;
 }
 /*-------------------------------------------------*/
-/* = 28.EVENTS 
+/* = 28.EVENTS
 /*-------------------------------------------------*/
  .pg-events{
 }
@@ -3962,7 +3962,7 @@ left: 0;
      margin-bottom: 10px;
 }
 /*-------------------------------------------------*/
-/* = 29.CONTACT US 
+/* = 29.CONTACT US
 /*-------------------------------------------------*/
  .pg-contact{
 }
@@ -4108,7 +4108,7 @@ left: 0;
      font-weight: 700;
 }
 /*-------------------------------------------------*/
-/* = 30.MOBILE MANU 
+/* = 30.MOBILE MANU
 /*-------------------------------------------------*/
  .ed-mob-menu{
      position:fixed;
@@ -4354,14 +4354,14 @@ left: 0;
     display: block;
     font-size: 12px;
     color: #ffcfbe;
-	margin-top: -4px;	
+	margin-top: -4px;
 }
 .sb2-13 {
 	background: #313f96;
-} 
+}
 .sb2-13 ul {
     /* padding: 5px; */
-    
+
     margin-left: 0px;
     padding-left: 0px;
     margin-bottom: 0px;
@@ -4548,7 +4548,7 @@ left: 0;
     width: 24px;
     height: 24px;
     /* border: 1px solid #6d6d6d; */
-    
+
     padding: 5px;
     text-align: center;
     border-radius: 20px;
@@ -4684,7 +4684,7 @@ left: 0;
     list-style-type: none;
     background: #00BCD4;
     /* padding: 5px; */
-    
+
     margin-right: 10px;
 }
 .db-1 ul li:nth-child(1) {
@@ -4736,7 +4736,7 @@ left: 0;
 .db-2 {
     background: #e3e8ea;
     padding: 25px;
-    
+
     margin-top: 30px;
     position: relative;
     overflow: hidden;
@@ -4809,7 +4809,7 @@ left: 0;
 }
 .sb2-2-3 {
     background:#fff;
-    
+
     margin-top: 30px;
 }
 .list-img {} .list-img img {
@@ -4845,11 +4845,21 @@ left: 0;
 .inn-title {
     padding: 15px 25px;
     background: #313f96;
+
 }
 .inn-title h4 {
     font-weight: 700;
     padding-bottom: 0px;
     color: #fff;
+    display: inline-block;
+    /* float: left; */
+}
+.inn-title #button{
+    float:right;
+    /* margin-top: 0px; */
+    background-color: rgb(59, 163, 59);
+    border-color: #313f96;
+
 }
 .txt-danger {
     color: #ea6c41;
@@ -4868,23 +4878,23 @@ left: 0;
     color: #469408;
     margin-right: 10px;
 }
-.table-desi {overflow-x: hidden;} 
+.table-desi {overflow-x: hidden;}
 .table-desi thead {} .table-desi thead tr {} .table-desi thead tr th {
     text-transform: uppercase;
     font-size: 12px;
     font-weight: 700;
 }
-.table-desi tbody {} 
+.table-desi tbody {}
 .table-desi tbody tr {
     -webkit-transform: scale(1);
     transform: scale(1);
     -webkit-transition: .3s ease-in-out;
-    transition: .3s ease-in-out;	
-} 
+    transition: .3s ease-in-out;
+}
 .table-desi tbody tr:hover{
     -webkit-transform: scale(1.01);
-    transform: scale(1.01);	
-} 
+    transform: scale(1.01);
+}
 .table-desi tbody tr td {
     color: #929292;
     padding: 15px 8px 12px 8px !important;
@@ -4964,7 +4974,7 @@ left: 0;
 .app-search input {
     border-bottom: 0px !important;
     line-height: 7px !important;
-    
+
     height: 35px !important;
     color: #cecece;
 }
@@ -5183,7 +5193,7 @@ left: 0;
 .select-pos {
     position: relative;
     /* overflow: hidden; */
-    
+
     display: initial;
 }
 .menu-active{
@@ -5197,7 +5207,7 @@ left: 0;
     border: 0px;
     display: block;
     pointer-events: none;
-    position: relative;	
+    position: relative;
 }
 .ad-st-view{
     background: #e25e30;
@@ -5205,7 +5215,7 @@ left: 0;
     font-size: 12px;
     font-weight: 700;
     padding: 1px 5px;
-    border-radius: 3px;	
+    border-radius: 3px;
 }
 .admin-form{}
 .admin-form form{}
@@ -5226,23 +5236,23 @@ border: 1px solid #e2e2e2;
     padding-left: 16px;
     box-sizing: border-box;
     margin-bottom: 8px;
-    padding-top: 15px;	
+    padding-top: 15px;
 }
 .admin-form form label{
     left: 20px;
     font-size: 14px;
-    top: 8px;	
+    top: 8px;
 }
 .admin-form form i{
     text-align: center;
-    padding: 0px;	
+    padding: 0px;
 }
 .admin-form form [type="submit"]{
 width: 100%;
     display: block;
     padding: 1px 30px;
     font-size: 14px;
-    font-weight: 700;	
+    font-weight: 700;
 }
 .ad-cou-deta-h4 h4{margin-top:15px;padding-bottom:10px;}
 .admin-upload-btn{height: 40px !important;}
@@ -5277,7 +5287,7 @@ width: 100%;
 }
 .h2-hero-inn{
     position: relative;
-    overflow: hidden;	
+    overflow: hidden;
 }
 .ed-ban{
     padding: 30px 0px 50px 0px;
@@ -5326,7 +5336,7 @@ width: 100%;
 .ed-bann-line1{width: 100%;height: 1px;background: #2659ab;display: inline-block;position: absolute;top: 22px;}
 .ed-ban-tit-3{}
 .ed-ban-tit-3-com{
-    margin-bottom: 30px;	
+    margin-bottom: 30px;
 }
 .ed-ban-tit-31{
     width: 50%;
@@ -5412,7 +5422,7 @@ width: 100%;
 	width:100%;
 }
 .ed-ref-form-inn form ul li label{
-	
+
 font-size: 14px !important;
 }
 .ed-ref-form-inn form ul li input{
@@ -5553,11 +5563,11 @@ input:not(:focus):valid ~ .floating-label{
 /*-------------------------------------------------*/
 .pg-blog{
     width: 100%;
-    margin: 0 auto;	
+    margin: 0 auto;
 }
 .pg-blog ul li{
     margin-bottom: 25px;
-    padding-bottom: 40px;	
+    padding-bottom: 40px;
 }
 .pg-blog h4{
     margin-bottom: 20px;
@@ -5582,7 +5592,7 @@ input:not(:focus):valid ~ .floating-label{
     padding-bottom: 15px;
     border-bottom: 0px;
     padding-top: 0px;
-    line-height: 26px;	
+    line-height: 26px;
 }
 /*-------------------------------------------------*/
 /* =  RESARCH PAGE CSS Styles
@@ -5605,11 +5615,11 @@ input:not(:focus):valid ~ .floating-label{
     -webkit-transform: scale(1);
     transform: scale(1);
     -webkit-transition: .3s ease-in-out;
-    transition: .3s ease-in-out;	
+    transition: .3s ease-in-out;
 }
 .ed-rese-grid:hover{
     -webkit-transform: scale(1.02);
-    transform: scale(1.02);	
+    transform: scale(1.02);
 }
 .ed-rsear-in{
     margin: 0 auto;
@@ -5659,7 +5669,7 @@ input:not(:focus):valid ~ .floating-label{
     top: 20px;
 }
 .ed-flag img{
-    border-radius: 10px;	
+    border-radius: 10px;
 }
 .ed-flag a{}
 .ed-faci-full-top{}
@@ -5734,7 +5744,7 @@ padding: 6px 25px;
     margin: 25px;
     margin: 0 auto;
     text-align: center;
-    background: #fff;	
+    background: #fff;
     padding: 50px;
     margin-top: 50px;
     border-radius: 4px;
@@ -5753,7 +5763,7 @@ padding: 6px 25px;
     margin-top: 15px;
     text-transform: uppercase;
     font-weight: 700;
-    color: #f9bb09;	
+    color: #f9bb09;
 }
 .ad-log-in-con p{}
 .ad-log-in-con form{}

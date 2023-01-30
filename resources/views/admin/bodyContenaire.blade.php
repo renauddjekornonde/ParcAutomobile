@@ -7,7 +7,7 @@
             <div class="sb2-13">
                 <ul class="collapsible" data-collapsible="accordion">
 
-                    <li><a href="#" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a>
+                    <li><a href="{{route('indexAdmin')}}" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a>
                     </li>
 
                     <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-calendar" aria-hidden="true"></i> Utilisateur</a>
@@ -18,24 +18,24 @@
                             </ul>
                         </div>
                     </li>
-                    <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-calendar" aria-hidden="true"></i> Categorie</a>
+                    <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-calendar" aria-hidden="true"></i> Marque</a>
                         <div class="collapsible-body left-sub-menu">
-                            <ul>
+                            {{-- <ul>
                                 <li><a href="admin-event-all.html">Toutes les Categories</a>
                                 </li>
                                 <li><a href="admin-event-add.html">Nouvelle Categorie</a>
                                 </li>
-                            </ul>
+                            </ul> --}}
                         </div>
                     </li>
-                    <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-bullhorn" aria-hidden="true"></i> Voitures</a>
+                    <li><a href="{{route('createVoiture')}}" class="collapsible-header"><i class="fa fa-bullhorn" aria-hidden="true"></i> Voitures</a>
                         <div class="collapsible-body left-sub-menu">
-                            <ul>
+                            {{-- <ul>
                                 <li><a href="admin-seminar-all.html">Registre Voitures</a>
                                 </li>
                                 <li><a href="admin-seminar-add.html">Nouvelle Voiture</a>
                                 </li>
-                            </ul>
+                            </ul> --}}
                         </div>
                     </li>
 

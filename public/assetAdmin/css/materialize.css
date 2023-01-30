@@ -6,7 +6,7 @@
  * Last Changes: 10 jan 2018
  * Author: RN53 Themes
  * Email:      rn53themes@gmail.com
- * Website:    http://www.rn53themes.net 
+ * Website:    http://www.rn53themes.net
  -----------------------------------------------*/
 .materialize-red {
      background-color: #e51c23 !important;
@@ -4648,7 +4648,7 @@
 }
  button:focus {
      outline: none;
-     background-color: #2ab7a9;
+     /* background-color: #2ab7a9; */
 }
  label {
      font-size: 0.8rem;
@@ -4679,7 +4679,7 @@
      outline: none;
      height: 3rem;
      width: 100%;
-     font-size: 1rem;
+     font-size: 1.5rem;
      margin: 0 0 20px 0;
      padding: 0;
      box-shadow: none;
@@ -6947,4 +6947,3 @@
          margin-bottom: 5em;
     }
 }
- 

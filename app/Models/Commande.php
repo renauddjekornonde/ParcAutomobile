@@ -15,7 +15,7 @@ class Commande extends Model
         'updated_at'
     ];
     public function commandeVoiture(){
-        return $this->hasMany(Voiture::class);
+        return $this->hasMany(Voitures::class);
     }
     public function users(){
         return $this->belongsTo(User::class);

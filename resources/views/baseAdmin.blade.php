@@ -20,6 +20,9 @@
     <link href={{asset("assetAdmin/css/style.css")}} rel="stylesheet" />
     <!-- RESPONSIVE.CSS ONLY FOR MOBILE AND TABLET VIEWS -->
     <link href={{asset("assetAdmin/css/style-mob.css")}} rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
+
 </head>
 
 <body>
@@ -38,5 +41,10 @@
     <script src={{asset("assetAdmin/js/bootstrap.min.js")}}></script>
     <script src={{asset("assetAdmin/js/materialize.min.js")}}></script>
     <script src={{asset("assetAdmin/js/custom.js")}}></script>
+      <!-- ================Start ionicon============ -->
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+      <!-- =========================End ionicon================= -->
+
 </body>
 </html>

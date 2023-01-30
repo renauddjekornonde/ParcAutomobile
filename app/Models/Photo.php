@@ -15,6 +15,6 @@ class Photo extends Model
         'updated_at'
     ];
     public function voiture(){
-        return $this->beLongsTo(Voiture::class);
+        return $this->beLongsTo(Voitures::class);
     }
 }

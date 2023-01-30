@@ -25,8 +25,9 @@ class VoitureStore extends FormRequest
     {
         return [
             'marque'=>'required',
-            'modele'=>'required',
-           // 'statut'=>'required',
+            'model'=>'required',
+            'statut'=>'0',
+            'image'=>'required'
             //
         ];
     }
