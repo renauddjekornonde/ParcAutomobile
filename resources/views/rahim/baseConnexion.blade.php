@@ -63,16 +63,16 @@
                         <div class="collapse navbar-collapse" id="navbarsExample04">
                            <ul class="navbar-nav mr-auto">
                               <li class="nav-item">
-                                 <a class="nav-link" href="index.html"> Accueil  </a>
+                                 <a class="nav-link" href="{{route('home')}}"> Accueil  </a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="services.html">Services</a>
+                                 <a class="nav-link" href="{{route('service')}}">Services</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="contact.html">Contact</a>
+                                 <a class="nav-link" href="{{route('contact')}}">Contact</a>
                               </li>
                            </ul>
-                           <div class="sign_btn" ><a href="connexion.html">Sign in</a></div>
+                           <div class="sign_btn" ><a href="{{route('connexion')}}">Sign in</a></div>
                         </div>
                      </nav>
                   </div>

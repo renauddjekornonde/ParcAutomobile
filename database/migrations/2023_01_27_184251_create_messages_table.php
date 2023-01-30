@@ -16,8 +16,9 @@ return new class extends Migration
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
             $table->string('contenu');
-            $table->unsignedBigInteger('id_users');
-            $table->foreign('id_users')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('nom');
+            $table->string('prenom');
+            $table->string('email');
             $table->timestamps();
         });
     }

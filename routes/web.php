@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VoitureController;
+use App\Http\Controllers\MessageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +16,8 @@ use App\Http\Controllers\VoitureController;
 
 Route::get('/', function () {
     return view('home.home');
-});
+})->name('home');
+
 
 Route::get('/admin', function () {
     return view('admin.index');
@@ -28,18 +30,22 @@ Route::get('/detail', function () {
 
 Route::get('/connexion', function () {
     return view('pages.connexion');
-});
+})->name('connexion');
 Route::get('/contact', function () {
     return view('pages.contact');
-});
+})->name('contact');
 
 Route::get('/services', function () {
     return view('pages.services');
-});
+})->name('service');
 
 Route::get('/createVoiture', [VoitureController::class, 'create'])->name('createVoiture');
-Route::get('/indexAdmin', [VoitureController::class, 'index'])->name('indexAdmin');
+Route::get('/afficheMessage', [MessageController::class, 'afficheMessage'])->name('afficheMessage');
+Route::get('/messageById/{id}', [MessageController::class, 'getMessageById'])->name('messageById');
 
+
+
+Route::get('/indexAdmin', [VoitureController::class, 'index'])->name('indexAdmin');
 Route::match(['get', 'post'], '/storeVoiture', [VoitureController::class, 'store'])->name('storeVoiture');
 
 Route::get('/showVoiture/{id}', [VoitureController::class, 'show'])->name('showVoiture');
@@ -47,3 +53,4 @@ Route::get('/editerVoiture/{id}', [VoitureController::class, 'editer'])->name('e
 Route::patch('/updateVoiture/{id}', [VoitureController::class, 'update'])->name('updateVoiture');
 Route::patch('/setStatut/{id}', [VoitureController::class, 'setStatut'])->name('setStatut');
 Route::delete('/deleteVoiture/{id}', [VoitureController::class, 'destroy'])->name('destroyVoiture');
+Route::post('/message',[MessageController::class, 'store'])->name('message');
