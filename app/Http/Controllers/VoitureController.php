@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Voitures;
 use App\Http\Requests\VoitureStore;
 use App\Models\Photo;
+use Illuminate\Support\Facades\Storage;
 
 class VoitureController extends Controller
 {
@@ -13,20 +14,16 @@ class VoitureController extends Controller
         $voitures= Voitures::all();
         $secondVoiture= Voitures::all();
         $pictures= Photo::all();
-        $countes= 0;
-        foreach($voitures as $voiture){
-            foreach($secondVoiture as $voiture2){
-                if($voiture->model == $voiture2->model){
-                    $countes= $countes + 1;
-            }
-            }
-        }
-        return View('admin.index', compact('voitures','pictures', 'countes'));
+
+        return View('admin.index', compact('voitures','pictures'));
     }
     public function create(){
         $voitures= Voitures::all();
         $pictures= Photo::all();
-        return View('admin.createVoiture', compact('voitures','pictures'));
+        $controller = app('App\Http\Controllers\VoitureController');
+        $descriptions = $controller->getDescription($pictures);
+
+        return View('admin.createVoiture', compact('voitures','pictures', 'descriptions'));
     }
 
     public function store(Request $request){
@@ -48,7 +45,7 @@ class VoitureController extends Controller
             if($files){
                  $newFile= $request->file(['image']);
 
-                 $file_path= $newFile[$i]->store('public/images/');
+                 $file_path= $newFile[$i]->store('images');
 
                     // $extension = $newFile[$i]->getClientOriginalExtension();
 
@@ -65,9 +62,15 @@ class VoitureController extends Controller
 
         }
 
-
         return redirect()->back()->with('success','Voiture enregistrer avec succes');
 
+    }
+
+    public function getDescription($pic){
+        if($pic){
+            $pic= Storage::url($pic);
+        }
+        return $pic;
     }
 
     public function show($id)

@@ -150,7 +150,9 @@
                                                     @foreach ($pictures as $photo)
                                                     <div class="row">
                                                         <div class="col-md-4">
-                                                            <img src="{{asset('storage/images/'. $photo->description)}}" class="img-thumbnail" >
+                                                            {{-- {{Storage::url(Auth::user()->image)}} --}}
+                                                            <img src="{{asset('storage/app/'.$photo->description)}}" class="img-thumbnail" >
+                                                            {{-- <img src="{{asset('assetAdmin/images/Image.png')}}" class="img-thumbnail" > --}}
                                                         </div>
                                                     @endforeach
                                                     </div>
@@ -199,6 +201,7 @@
                                                 </h5>
                                             </td>
                                         {{-- modal pour modifer une voiture --}}
+
                                         <div class="modal" id="modifierVoiture">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
