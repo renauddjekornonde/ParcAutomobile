@@ -150,7 +150,7 @@
                                                     @foreach ($pictures as $photo)
                                                     <div class="row">
                                                         <div class="col-md-4">
-                                                            <img src="{{asset('storage/images/'. $photo->description)}}" class="img-thumbnail" >
+                                                            <img src="{{Storage::url($photo->description)}}" class="img-thumbnail" >
                                                         </div>
                                                     @endforeach
                                                     </div>
