@@ -56,7 +56,7 @@
                 <div class="box-inn-sp">
                     <div class="inn-title">
                         <h4>Voitures</h4>
-                            <button id="button"  data-toggle="modal" data-target="#articleModal"> <ion-icon name="add-sharp" style="font-size: 1.5rem; background-color: rgb(59, 163, 59);"></ion-icon></button>
+                            <button id="button"  data-toggle="modal" data-target="#articleModal"> <ion-icon name="add-sharp" style="font-size: 1.5rem; background-color:#f6d601;"></ion-icon></button>
 
 
                         {{-- modal --}}
@@ -185,7 +185,7 @@
                                         @if ($voiture)
                                             <td style="display: inline-block;">
                                                 <h5 style="float: left; margin-right: 10px;">
-                                                    <button id="button"  data-toggle="modal" data-target="#modifierVoiture" style="color: green; text-decoration: none; border: none; "><ion-icon name="pencil-outline"></ion-icon></button>
+                                                    <button id="button"  data-toggle="modal" data-target="#modifierVoiture" style="color:#131105; background-color:white; text-decoration: none; border: none; "><ion-icon name="pencil-outline"></ion-icon></button>
                                                 </h5>
 
                                                 <h5 style="float: right; margin-left: 10px;">

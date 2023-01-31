@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VoitureController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\PhotoController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +16,7 @@ use App\Http\Controllers\MessageController;
 |
 */
 
-Route::get('/', function () {
-    return view('home.home');
-})->name('home');
+
 
 
 Route::get('/admin', function () {
@@ -43,7 +43,7 @@ Route::get('/createVoiture', [VoitureController::class, 'create'])->name('create
 Route::get('/afficheMessage', [MessageController::class, 'afficheMessage'])->name('afficheMessage');
 Route::get('/messageById/{id}', [MessageController::class, 'getMessageById'])->name('messageById');
 
-
+Route::get('/', [PhotoController::class, 'index'])->name('home');
 
 Route::get('/indexAdmin', [VoitureController::class, 'index'])->name('indexAdmin');
 Route::match(['get', 'post'], '/storeVoiture', [VoitureController::class, 'store'])->name('storeVoiture');

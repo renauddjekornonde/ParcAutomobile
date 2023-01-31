@@ -34,42 +34,15 @@
               </div>
            </div>
            <div class="row">
-              <div class="col-md-4 ">
-                 <div class="car_box">
-                    <figure><img src={{asset("assets/images/car_img1.png")}} alt="#"/></figure>
-                    <h3>Hundai</h3>
-                 </div>
-              </div>
-              <div class="col-md-4">
-                 <div class="car_box">
-                    <figure><img src={{asset("assets/images/car_img1.png")}} alt="#"/></figure>
-                    <h3>Hundai</h3>
-                 </div>
-              </div>
-              <div class="col-md-4">
-                 <div class="car_box">
-                    <figure><img src={{asset("assets/images/car_img1.png")}} alt="#"/></figure>
-                    <h3>Hundai</h3>
-                 </div>
-              </div>
-              <div class="col-md-4 padding_leri">
-                 <div class="car_box">
-                    <figure><img src={{asset("assets/images/car_img2.png")}} alt="#"/></figure>
-                    <h3>Audi</h3>
-                 </div>
-              </div>
-              <div class="col-md-4 padding_leri">
-                 <div class="car_box">
-                    <figure><img src={{asset("assets/images/car_img3.png")}} alt="#"/></figure>
-                    <h3>Bmw x5</h3>
-                 </div>
-              </div>
-              <div class="col-md-4 padding_leri">
-                 <div class="car_box">
-                    <figure><img src={{asset("assets/images/car_img3.png")}} alt="#"/></figure>
-                    <h3>Bmw x5</h3>
-                 </div>
-              </div>
+             @foreach ($images as $image)
+             <div class="col-md-4 ">
+                <div class="car_box">
+                   <figure><img src={{Storage::url($image->description)}} alt="#"/></figure>
+                   <h3>Mercedes</h3>
+                </div>
+             </div>
+             @endforeach
+
            </div>
         </div>
      </div>

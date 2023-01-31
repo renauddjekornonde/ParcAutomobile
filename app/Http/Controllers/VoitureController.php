@@ -13,15 +13,8 @@ class VoitureController extends Controller
         $voitures= Voitures::all();
         $secondVoiture= Voitures::all();
         $pictures= Photo::all();
-        $countes= 0;
-        foreach($voitures as $voiture){
-            foreach($secondVoiture as $voiture2){
-                if($voiture->model == $voiture2->model){
-                    $countes= $countes + 1;
-            }
-            }
-        }
-        return View('admin.index', compact('voitures','pictures', 'countes'));
+
+        return View('admin.index', compact('voitures','pictures'));
     }
     public function create(){
         $voitures= Voitures::all();

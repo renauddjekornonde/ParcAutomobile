@@ -42,7 +42,7 @@
         </div>
     </div>
 
-    
+
     <!--== Marque Details ==-->
     <div class="sb2-2-3">
         <div class="row">
@@ -68,7 +68,7 @@
                                 <tbody>
                                     @foreach ($voitures as $voiture)
                                     <tr>
-                                        <!-- <td><span class="list-img"><img src="images/course/sm-1.jpg" alt=""></span> 
+                                        <!-- <td><span class="list-img"><img src="images/course/sm-1.jpg" alt=""></span>
                                         </td>-->
                                         <td>{{$voiture->id}}</td>
                                         <td>
@@ -76,7 +76,7 @@
                                         </td>
                                         <td>
                                             {{-- @foreach($countes as $counte) --}}
-                                            {{$countes}}
+                                            {{-- {{$countes}} --}}
                                             {{-- @endforeach --}}
                                         </td>
                                         <td>

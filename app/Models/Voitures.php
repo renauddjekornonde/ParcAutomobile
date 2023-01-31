@@ -24,4 +24,11 @@ public function admin(){
 public function commande(){
     return $this->beLongsTo(Commande::class);
 }
+public function voitureMarque(){
+    return $this->belongsTo(Marque::class);
+}
+
+public function voitureModel(){
+    return $this->hasMany(Modele::class);
+}
 }
