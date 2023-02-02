@@ -4,38 +4,62 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Voitures;
+use App\Models\Modele;
+use App\Models\Marque;
 use App\Http\Requests\VoitureStore;
 use App\Models\Photo;
+use Illuminate\Database\Eloquent\Model;
 
 class VoitureController extends Controller
 {
     public function index(){
-        $voitures= Voitures::all();
-        $secondVoiture= Voitures::all();
-        $pictures= Photo::all();
+       // $voitures= Voitures::with('voiturePhoto')->get();
+       $voitures= Voitures::all();
+       $cars= Voitures::with('voiturePhotos')->get();
+       $models= Voitures::with('models')->get();
+       $marques= Marque::get();
 
-        return View('admin.index', compact('voitures','pictures'));
+        return View('admin.index', compact('voitures', 'cars', 'models', 'marques'));
     }
     public function create(){
         $voitures= Voitures::all();
-        $pictures= Photo::all();
-        return View('admin.createVoiture', compact('voitures','pictures'));
+        $cars= Voitures::with('voiturePhotos')->get();
+        $models= Voitures::with('models')->get();
+        $marques= Voitures::with('voitureMarque')->get();
+        //dump($marques);
+        return View('admin.createVoiture', compact('voitures', 'cars', 'models', 'marques'));
     }
 
     public function store(Request $request){
         $input = $request->all();
-        $voiture= Voitures::create([
-            'model'=>$input['model'],
-            'marque'=>$input['marque'],
-            'statut'=>0,
+
+        //creation d'une marque puis recuperation de son identifiant
+        $marque= Marque::create([
+            'nom_marque'=>$input['marque'],
         ]);
+        $idMarque= $marque->id;
+
+        //creation d'une voiture avec tous identifiants recuperer notamment idmarque idmodel et idphoto
+        $voiture= Voitures::create([
+            'marque_id'=>$idMarque,
+            'statut'=>0,
+            ]);
+            $idVoiture=$voiture->id;
+
+        //creation d'un model puis recuperation de son identifiant
+        $model= Modele::create([
+            'nom_model'=>$input['model'],
+            'couleur'=>$input['couleur'],
+            'voitures_id'=>$idVoiture,
+        ]);
+
+
 
         $data= $request->all();
         // dd($data);
         for($i=0; $i< sizeof($data['image']); ++$i){
 
             $photos= new Photo();
-            $id= $voiture->id;
             $files= $request->hasFile(['image']);
 
             if($files){
@@ -43,21 +67,15 @@ class VoitureController extends Controller
 
                  $file_path= $newFile[$i]->store('public/images/');
 
-                    // $extension = $newFile[$i]->getClientOriginalExtension();
-
-                    // $filename= time().'.'.$extension;
-
-                    // $newFile[$i]->move('imageVoiture/', $filename);
-
                    $photos->description= $file_path;
-
+                   $photos->voitures_id= $idVoiture;
+                //recuperation de la description d'une photo puis creation d'une photo
+                   $photos->save();
 
             }
-             $photos->id_voiture= $id;
-             $photos->save();
+
 
         }
-
 
         return redirect()->back()->with('success','Voiture enregistrer avec succes');
 
@@ -88,8 +106,7 @@ class VoitureController extends Controller
 
     public function setStatut($id){
         $voitures= Voitures::find($id);
-        $voitures->model= $voitures->model;
-        $voitures->marque= $voitures->marque;
+        $voitures->marque_id= $voitures->marque_id;
         $voitures->statut= 1;
         $voitures->save();
         return redirect()->back();
@@ -102,13 +119,5 @@ class VoitureController extends Controller
         return redirect()->back()->with('success', 'Supprimer');
     }
 
-    public function counteCar($marque){
-        $voitures= Voitures::all();
-        $counte= 0;
-        foreach($voitures->marque as $voiture){
-            if($voiture!= $marque){
-                $counte= $counte+ 1;
-            }
-        }
-    }
+
 }

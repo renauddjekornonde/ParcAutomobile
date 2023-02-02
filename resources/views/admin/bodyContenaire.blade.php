@@ -10,7 +10,7 @@
                     <li><a href="{{route('indexAdmin')}}" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a>
                     </li>
 
-                    <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-calendar" aria-hidden="true"></i> Utilisateur</a>
+                    <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-user" aria-hidden="true"></i> Utilisateur</a>
                         <div class="collapsible-body left-sub-menu">
                             <ul>
                                 <li><a href="admin-event-all.html">Liste</a>
@@ -18,7 +18,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-calendar" aria-hidden="true"></i> Marque</a>
+                    <li><a href="{{route('createMarque')}}" class="collapsible-header"><i class="fa fa-maxcdn" aria-hidden="true"></i> Marque</a>
                         <div class="collapsible-body left-sub-menu">
                             {{-- <ul>
                                 <li><a href="admin-event-all.html">Toutes les Categories</a>
@@ -28,7 +28,7 @@
                             </ul> --}}
                         </div>
                     </li>
-                    <li><a href="{{route('createVoiture')}}" class="collapsible-header"><i class="fa fa-bullhorn" aria-hidden="true"></i> Voitures</a>
+                    <li><a href="{{route('createVoiture')}}" class="collapsible-header"><i class="fa fa-car" aria-hidden="true"></i> Voitures</a>
                         <div class="collapsible-body left-sub-menu">
                             {{-- <ul>
                                 <li><a href="admin-seminar-all.html">Registre Voitures</a>
@@ -47,6 +47,16 @@
                                 <li><a href="admin-user-add.html">En cours</a>
                                 </li>
                             </ul>
+                        </div>
+                    </li>
+                     <li><a href="{{route('afficheMessage')}}" class="collapsible-header"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a>
+                        <div class="collapsible-body left-sub-menu">
+                            {{-- <ul>
+                                <li><a href="admin-seminar-all.html">Registre Voitures</a>
+                                </li>
+                                <li><a href="admin-seminar-add.html">Nouvelle Voiture</a>
+                                </li>
+                            </ul> --}}
                         </div>
                     </li>
                 </ul>

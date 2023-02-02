@@ -76,6 +76,11 @@
                                             @csrf
 
                                             <div class="form-group">
+                                                <label for="marque">Marque</label>
+                                                <input type="text" name="marque" class="form-control" id="marque" placeholder="Entrez la marque de la voiture" >
+                                            </div>
+
+                                            <div class="form-group">
                                                 <label for="model">Model</label>
                                                 <input type="text" name="model" class="form-control" id="titre" placeholder="Entrez le model de la voiture" required>
                                                 @error('model')
@@ -84,9 +89,11 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="marque">Marque</label>
-                                                <input type="text" name="marque" class="form-control" id="marque" placeholder="Entrez la marque de voiture" >
+                                                <label for="marque">Couleur</label>
+                                                <input type="text" name="couleur" class="form-control" id="couleur" placeholder="Entrez la couleur de la voiture" >
                                             </div>
+
+
                                             <hr>
 
                                             <td >Ajouter des photos<button style="float: right;" type="button" name="add" id="add-btn" class="btn btn-success"><ion-icon name="duplicate-sharp"></ion-icon></button></td>
@@ -124,16 +131,19 @@
                                         {{-- <th>Image</th> --}}
                                         <th>Marque</th>
                                         <th>Model</th>
+                                        <th>Couleur</th>
                                         <th>Publier le</th>
                                         <th>Status</th>
                                         <th>View</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($voitures as $voiture)
-                                    <tr>
-                                            <td><button type="button" data-toggle="modal" data-target="#photoModal" style="border:0px;" class="list-enq-name"> {{$voiture->marque}}</button>
+                                    @foreach($voitures as $voiture)
+                                        <tr>
+                                        @foreach ($marques as $marque)
+                                            <td><button type="button" data-toggle="modal" data-target="#photoModal" style="border:0px;" class="list-enq-name">{{$marque->voitureMarque->nom_marque}}</button> 
                                             </td>
+                                        @endforeach
 
                                                 <!-- Modal pour afficher les photos -->
                                             <div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -147,11 +157,15 @@
                                                     </div>
                                                     <div class="modal-body">
                                                     <!-- Boucle pour afficher chaque photo dans la liste -->
-                                                    @foreach ($pictures as $photo)
+                                                    @foreach ($cars as $voiture)
                                                     <div class="row">
                                                         <div class="col-md-4">
-                                                            <img src="{{Storage::url($photo->description)}}" class="img-thumbnail" >
+                                                        @foreach($voiture->voiturePhotos as $car)
+                                                            <img src="{{Storage::url($car->description)}}" class="img-thumbnail" >
+                                                        @endforeach
                                                         </div>
+                                                        {{-- <?= $voi->voitures->description?> --}}
+
                                                     @endforeach
                                                     </div>
                                                     </div>
@@ -163,8 +177,23 @@
                                             </div>
                                         <!-- Fin Modal pour afficher les photos -->
 
-                                            <td><a href="#"><span class="list-enq-name">{{$voiture->model}}</span></a>
+                                            @foreach($models as $model)
+                                            <td><a href="#"><span class="list-enq-name">
+                                                @foreach($model->models as $m)
+                                                    {{$m->nom_model}}
+                                                @endforeach
+                                                </td>
+
+                                        
+                                            <td><span class="list-enq-name">
+                                                @foreach($model->models as $m)
+                                                    {{$m->couleur}}
+                                                @endforeach
+                                            
+                                            </span>
                                             </td>
+                                            @endforeach
+
                                             <td>
                                                 <span class="list-enq-name">
                                                {{$voiture->created_at->format('d/m/y')}}</span>
@@ -184,9 +213,9 @@
                                             </td>
                                         @if ($voiture)
                                             <td style="display: inline-block;">
-                                                <h5 style="float: left; margin-right: 10px;">
+                                                {{-- <h5 style="float: left; margin-right: 10px;">
                                                     <button id="button"  data-toggle="modal" data-target="#modifierVoiture" style="color:#131105; background-color:white; text-decoration: none; border: none; "><ion-icon name="pencil-outline"></ion-icon></button>
-                                                </h5>
+                                                </h5> --}}
 
                                                 <h5 style="float: right; margin-left: 10px;">
                                                     <form action="{{route('destroyVoiture', $voiture->id)}}" method="POST">

@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->String('nom_model');
             $table->String('couleur');
+            $table->unsignedBigInteger('voitures_id');
+            $table->foreign('voitures_id')->references('id')->on('voitures')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

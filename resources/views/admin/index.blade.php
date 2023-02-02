@@ -59,29 +59,42 @@
                                         <!-- <th>Image</th> -->
                                         <th>Identifiant</th>
                                         <th>Nom</th>
-                                        <th>Nombre</th>
                                         <th>Disponible le</th>
                                         <th>Status</th>
                                         {{-- <th>View</th> --}}
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($voitures as $voiture)
+                                    @foreach ($marques as $marque)
                                     <tr>
                                         <!-- <td><span class="list-img"><img src="images/course/sm-1.jpg" alt=""></span>
                                         </td>-->
-                                        <td>{{$voiture->id}}</td>
+                                          <td><button type="button" data-toggle="modal" data-target="#photoModal" style="border:0px;" class="list-enq-name">
+                                          {{$marque->id}}</button>
+                                          </td>
                                         <td>
-                                            <span class="list-enq-name">{{$voiture->marque}}</span>
+                                            <button type="button" data-toggle="modal" data-target="#photoModal" style="border:0px;" class="list-enq-name">
+                                            {{$marque->nom_marque}}
+                                            </button>
                                         </td>
-                                        <td>
-                                            {{-- @foreach($countes as $counte) --}}
-                                            {{-- {{$countes}} --}}
-                                            {{-- @endforeach --}}
-                                        </td>
+                            
                                         <td>
                                         <span class="list-enq-name">
-                                           {{$voiture->created_at->format('d/m/y')}}</span>
+                                           {{$marque->created_at->format('d/m/y')}}</span>
+                                        </td>
+
+                                        <td>
+                                            @if ($marque->statut==0)
+                                            <form action="{{route('setStatut', $marque->id)}}" method="POST">
+                                                @csrf
+                                                @method('PATCH')
+                                                <button  style="border: none;" type="submit">
+                                                <span class="label label-success">Stock</span></button>
+                                            </form>
+                                            @else
+                                            <span class="label label-danger">Hors Stock</span>
+                                            @endif
+
                                         </td>
                                     </tr>
                                     @endforeach
@@ -109,7 +122,6 @@
                                 <thead>
                                     <tr>
                                         <th>Image</th>
-                                        <th>Marque</th>
                                         <th>Model</th>
                                         <th>Publier le</th>
                                         <th>Status</th>
@@ -119,12 +131,25 @@
                                 <tbody>
                                     @foreach ($voitures as $voiture)
                                     <tr>
-                                        <td><span class="list-img"><img src={{asset("assetAdmin/images/user/1.png")}} alt=""></span>
+                                    @foreach ($cars as $voiture)
+                                        <td><span class="list-img">
+                                        @foreach($voiture->voiturePhotos as $car)
+                                        <img src="{{Storage::url($car->description)}}" alt="">
+                                        @endforeach
+                                        </span>
                                         </td>
-                                        <td><a href="#"><span class="list-enq-name">{{$voiture->marque}}</span></a>
+                                    @endforeach
+                                    
+                                        
+                                         @foreach($models as $model)
+                                         <td>
+                                            <a href="#"><span class="list-enq-name">
+                                            @foreach($model->models as $m)
+                                                {{$m->nom_model}}
+                                            @endforeach
                                         </td>
-                                        <td><a href="#"><span class="list-enq-name">{{$voiture->model}}</span></a>
-                                        </td>
+                                        @endforeach
+                                        
                                         <td>
                                             <span class="list-enq-name">
                                            {{$voiture->created_at->format('d/m/y')}}</span>

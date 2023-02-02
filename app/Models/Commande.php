@@ -9,8 +9,8 @@ class Commande extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id_voiture',
-        'id_users',
+        'voiture_id',
+        'user_id',
         'created_at',
         'updated_at'
     ];

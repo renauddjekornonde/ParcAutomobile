@@ -10,11 +10,11 @@ class Photo extends Model
     use HasFactory;
     protected $fillable = [
         'description',
-        'id_voiture',
         'created_at',
-        'updated_at'
+        'updated_at',
+        'voitures_id'
     ];
-    public function voiture(){
-        return $this->beLongsTo(Voitures::class);
+    public function photoVoiture(){
+        return $this->belongsTo(Voitures::class);
     }
 }
