@@ -66,3 +66,30 @@ Route::delete('/deleteMarque/{id}', [MarqueController::class, 'destroy'])->name(
 
 Route::post('/message',[MessageController::class, 'store'])->name('message');
 
+
+
+Route::post('/my-ipn', function () {
+    $type_event = Input::get('type_event');
+    $custom_field = json_decode(Input::get('custom_field'), true);
+    $ref_command = Input::get('ref_command');
+    $item_name = Input::get('item_name');
+    $item_price = Input::get('item_price');
+    $devise = Input::get('devise');
+    $command_name = Input::get('command_name');
+    $env = Input::get('env');
+    $token = Input::get('token');
+    $api_key_sha256 = Input::get('api_key_sha256');
+    $api_secret_sha256 = Input::get('api_secret_sha256');
+
+    $my_api_key = env('API_KEY');
+    $my_api_secret = env('API_SECRET');
+
+    if(hash('sha256', $my_api_secret) === $api_secret_sha256 && hash('sha256', $my_api_key) === $api_key_sha256)
+    {
+        //from PayTech
+    }
+    else{
+        //not from PayTech
+    }
+});
+
