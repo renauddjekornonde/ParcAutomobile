@@ -14,7 +14,7 @@
                        ESITEC Auto est une entreprise de location et de vente de véhicule en ligne qui veille à la sécurité des clients afin que ces derniers puissent recevoir leurs véhicules sans se déplacer.
                        <head></head>
                     </p>
-                    <a href="#">Recherche</a>
+                    <a href="{{route('service')}}">Nos Services</a>
                  </div>
               </div>
            </div>
