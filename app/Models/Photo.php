@@ -12,9 +12,14 @@ class Photo extends Model
         'description',
         'created_at',
         'updated_at',
-        'voitures_id'
+        'voitures_id',
+        'model_id'
     ];
     public function photoVoiture(){
         return $this->belongsTo(Voitures::class);
+    }
+
+    public function photoModel(){
+        return $this->belongsTo(Modele::class, 'model_id');
     }
 }

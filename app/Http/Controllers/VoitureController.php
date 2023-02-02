@@ -52,6 +52,7 @@ class VoitureController extends Controller
             'couleur'=>$input['couleur'],
             'voitures_id'=>$idVoiture,
         ]);
+        $idmodel= $model->id;
 
 
 
@@ -69,6 +70,7 @@ class VoitureController extends Controller
 
                    $photos->description= $file_path;
                    $photos->voitures_id= $idVoiture;
+                   $photos->model_id= $idmodel;
                 //recuperation de la description d'une photo puis creation d'une photo
                    $photos->save();
 

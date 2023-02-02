@@ -15,7 +15,12 @@ class Modele extends Model
         'created_at',
         'updated_at'
     ];
+
     public function modelVoiture(){
         return $this->belongsTo(Voitures::class);
+    }
+
+    public function modelPhoto(){
+        return $this->hasMany(Photo::class);
     }
 }
