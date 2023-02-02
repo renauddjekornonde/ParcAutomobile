@@ -12,30 +12,34 @@
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
-      <!-- FAV ICON(BROWSER TAB ICON) -->
-      <link rel="shortcut icon" href={{asset("assets/images/fav.ico")}} type="image/x-icon">
+      <!-- FAV ICON(BROWSER TAB ICON)  -->
+      <link rel="shortcut icon" href={{asset("assetsA/images/fav.ico")}} type="image/x-icon">
       <!-- bootstrap css -->
-      <link rel="stylesheet" href={{asset("assets/css/bootstrap.min.css")}}>
+      <link rel="stylesheet" href={{asset("assetsA/css/bootstrap.min.css")}}>
       <!-- style css -->
-      <link rel="stylesheet" href={{asset("assets/css/style.css")}}>
+      <link rel="stylesheet" href={{asset("assetsA/css/style.css")}}>
       <!-- Responsive-->
-      <link rel="stylesheet" href={{asset("assets/css/responsive.css")}}>
+      <link rel="stylesheet" href={{asset("assetsA/css/responsive.css")}}>
       <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href={{asset("assets/css/jquery.mCustomScrollbar.min.css")}}>
+      <link rel="stylesheet" href={{asset("assetsA/css/jquery.mCustomScrollbar.min.css")}}>
       <!-- Tweaks for older IEs-->
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+      <style>
+        body{
+            background-image: url(assetsA/images/Image.jpeg);
+        }
+        button{
+            background-color: #f6d601;
+        }
+      </style>
+
    </head>
    <!-- body -->
    <body class="main-layout">
-      <!-- loader  -->
-      <div class="loader_bg">
-         <div class="loader"><img src={{asset("assets/images/AvGt.gif")}} alt="#" /></div>
-      </div>
-      <!-- end loader -->
       <!-- header -->
       <header>
          <!-- header inner -->
@@ -46,7 +50,7 @@
                      <div class="full">
                         <div class="center-desk">
                            <div class="logo">
-                              <a href="index.html"><img src={{asset("assets/images/logo1.png")}} alt="#" /></a>
+                              <a href="index.html"><img src={{asset("assetsA/images/logo1.png")}} alt="#" /></a>
                            </div>
                         </div>
                      </div>
@@ -68,7 +72,7 @@
                                  <a class="nav-link" href="{{route('contact')}}">Contact</a>
                               </li>
                            </ul>
-                           <div class="sign_btn"><a href="{{route('login')}}">Sign in</a></div>
+                           <div class="sign_btn" ><a href="{{route('connexion')}}">Sign in</a></div>
                         </div>
                      </nav>
                   </div>
@@ -76,37 +80,7 @@
             </div>
          </div>
       </header>
-      <!-- end header inner -->
-      <!-- end header -->
 
-            @yield("content")
-
-      <!--  footer -->
-      <footer>
-            <div class="copyright">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-md-12">
-                        <p>© 2019 All Rights Reserved. Design by <a href="https://html.design/"> ESITECAR</a></p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         <!-- </div> -->
-      </footer>
-      <!-- end footer -->
-      <!-- Javascript files-->
-      <script src={{asset("assets/js/jquery.min.js")}}></script>
-      <script src={{asset("assets/js/popper.min.js")}}></script>
-      <script src={{asset("assets/js/bootstrap.bundle.min.js")}}></script>
-      <script src={{asset("assets/js/jquery-3.0.0.min.js")}}></script>
-      <script src={{asset("assets/js/plugin.js")}}></script>
-      <!-- sidebar -->
-      <script src={{asset("assets/js/jquery.mCustomScrollbar.concat.min.js")}}></script>
-      <script src={{asset("assets/js/custom.js")}}></script>
-      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-      <!-- Animation jquery -->
-
-   </body>
+@yield("container")
 </html>
 

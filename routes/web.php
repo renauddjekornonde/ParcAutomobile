@@ -28,10 +28,6 @@ Route::get('/detail', function () {
     return view('home.detailVoiture');
 });
 
-
-Route::get('/connexion', function () {
-    return view('pages.connexion');
-})->name('connexion');
 Route::get('/contact', function () {
     return view('pages.contact');
 })->name('contact');
@@ -69,3 +65,4 @@ Route::delete('/deleteVoiture/{id}', [VoitureController::class, 'destroy'])->nam
 Route::delete('/deleteMarque/{id}', [MarqueController::class, 'destroy'])->name('destroyMarque');
 
 Route::post('/message',[MessageController::class, 'store'])->name('message');
+

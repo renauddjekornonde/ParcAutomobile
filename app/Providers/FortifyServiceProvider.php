@@ -43,11 +43,11 @@ class FortifyServiceProvider extends ServiceProvider
         });
 
         Fortify::loginView(function () {
-            return view('auth.login');
+            return view('pages.connexion');
         });
 
         Fortify::registerView(function () {
-            return view('auth.login');
+            return view('pages.inscription');
         });
     }
 }
