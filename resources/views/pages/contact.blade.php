@@ -1,4 +1,5 @@
 @extends("rahim.baseContact")
+@section('title', 'Contact')
 @section("content")
 <body class="main-layout">
 <!-- header -->

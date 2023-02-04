@@ -7,6 +7,7 @@ use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\MarqueController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CommandeController;
 use Symfony\Component\Console\Input\Input;
 
 /*
@@ -49,6 +50,8 @@ Route::match(['get', 'post'], '/storeVoiture', [VoitureController::class, 'store
 Route::match(['get', 'post'], '/storeMarque', [MarqueController::class, 'store'])->name('storeMarque');
 
 Route::match(['get', 'post'], '/storeUser', [AdminController::class, 'store'])->name('storeUser');
+
+Route::match(['get', 'post'], '/storeCommande', [CommandeController::class, 'store'])->name('storeCommande');
 
 Route::get('/showVoiture/{id}', [VoitureController::class, 'show'])->name('showVoiture');
 Route::get('/showMarque/{id}', [MarqueController::class, 'show'])->name('showMarque');

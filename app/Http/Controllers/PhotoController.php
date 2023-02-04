@@ -26,6 +26,6 @@ class PhotoController extends Controller
         $marques= Marque::all();
         $allPhoto= Photo::all();
         //dd($photosEtModel);;
-        return view('home.detailVoiture', compact('photosModels','photos', 'photosEtModel','photoEtVoiture', 'marques', 'allPhoto'));
+        return view('home.detailVoiture', compact('id','photosModels','photos', 'photosEtModel','photoEtVoiture', 'marques', 'allPhoto'));
     }
 }

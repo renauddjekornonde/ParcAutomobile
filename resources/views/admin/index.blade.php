@@ -1,4 +1,5 @@
 @extends("baseAdmin")
+@section('title', 'Admin')
 @section("content")
 <div class="sb2-2">
     <!--== breadcrumbs ==-->

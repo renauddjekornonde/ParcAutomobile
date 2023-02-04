@@ -1,4 +1,5 @@
 @extends("baseAccueil")
+@section('title', 'Accueil')
 @section("content")
       <!-- banner -->
       <section class="banner_main" id="banner">

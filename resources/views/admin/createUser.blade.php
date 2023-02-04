@@ -1,4 +1,5 @@
 @extends("baseAdmin")
+@section('title', 'Users')
 @section("content")
 <!DOCTYPE html>
 <html>

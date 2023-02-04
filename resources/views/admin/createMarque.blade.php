@@ -1,4 +1,5 @@
 @extends("baseAdmin")
+@section('title', 'Marque')
 @section("content")
 <!DOCTYPE html>
 <html>
@@ -108,7 +109,7 @@
                                 <tbody>
                                     @foreach($marques as $marque)
                                         <tr>
-                                            {{-- <td><button  data-toggle="modal" data-target="#photoModal" style="border:0px;" class="list-enq-name">{{$marque->nom_marque}}</button> 
+                                            {{-- <td><button  data-toggle="modal" data-target="#photoModal" style="border:0px;" class="list-enq-name">{{$marque->nom_marque}}</button>
                                             </td> --}}
 
                                             <td>

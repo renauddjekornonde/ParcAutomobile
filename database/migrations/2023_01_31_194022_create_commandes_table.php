@@ -16,9 +16,11 @@ return new class extends Migration
         Schema::create('commandes', function (Blueprint $table) {
             $table->id();
 
+            $table->integer('statut')->default(0);
+
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            
+
             $table->unsignedBigInteger('voitures_id');
             $table->foreign('voitures_id')->references('id')->on('voitures')->onDelete('cascade')->onUpdate('cascade');
 

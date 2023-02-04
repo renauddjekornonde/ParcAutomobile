@@ -1,4 +1,5 @@
 @extends('baseAdmin')
+@section('title', 'Message')
 @section('content')
 <div class="sb2-2">
 <h2 class="text-center">Informations saisies:</h2>

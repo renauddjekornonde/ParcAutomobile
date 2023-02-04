@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Education Master Template</title>
+    <title>{{config('app.name')}}- Detail</title>
     <!-- META TAGS -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -133,7 +133,7 @@
                                 </li>
                                 @endguest
                             </ul>
-                            
+
                         </div>
                     </div>
                     <div class="all-drop-down-menu">
@@ -177,7 +177,7 @@
                                     {{-- @foreach ($photos as $photo) --}}
                                     <img src={{Storage::url($photos->description)}} alt="">
                                     {{-- @endforeach --}}
-                                </div> 
+                                </div>
                                 <div class="pg-eve-reg pg-blog-reg">
                                     <a href="#!" data-toggle="modal" data-target="#modal2">Commander</a>
                                 </div>
@@ -272,24 +272,24 @@
                     <!--<p>VOICI LA LISTES DE QUELQUES ARTICLES.</p>-->
                 </div>
             </div>
-            
+
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <div class="item slider1 active">
                         <div class="home-top-cour col-3">
                             <!--POPULAR COURSES IMAGE-->
-                           
+
                             <div class="col-md-3" style="margin-left:40%"> <img src={{Storage::url($photos->description)}} alt=""> </div>
                             <div class="hom-list-share" style="margin-left:400px;">
                                     <ul>
                                         <li><a href="{{route('showPhoto',$photos->id)}}"><i class="fa fa-eye" aria-hidden="true"></i> Voir</a> </li>
-                                     
+
                                     </ul>
                                 </div>
                             <!--POPULAR COURSES: CONTENT-->
                             <div class="col-md-9 home-top-cour-desc">
-                                
+
                             </div>
                         </div>
                     </div>
@@ -297,7 +297,7 @@
                     <div class="item">
                         <div class="home-top-cour">
                             <!--POPULAR COURSES IMAGE-->
-                           
+
                             <div class="row"><div class="col-md-3" style="margin-left:40%"> <img src={{Storage::url($photo->description)}} alt="" style="width:100%"> </div></div>
                             <div class="hom-list-share" style="margin-left:400px;">
                                 <ul>
@@ -308,17 +308,17 @@
                             </div>
                             <!--POPULAR COURSES: CONTENT-->
                             <div class="col-md-9 home-top-cour-desc">
-               
+
                                 <div class="hom-list-share">
-                          
+
                                 </div>
                             </div>
                         </div>
                     </div>
-                    @endforeach 
+                    @endforeach
                 </div>
-                
-    
+
+
                 <!-- Left and right controls -->
                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">
                     <i class="fa fa-chevron-left slider-arr"></i>
@@ -330,13 +330,13 @@
             <div class="row">
                 <div class="col-md-6">
                     <div>
-                       
+
 
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div>
-                       
+
                     </div>
                 </div>
             </div>
@@ -354,20 +354,26 @@
         </div>
     </section>
 
-            <!-- REGISTER SECTION -->
+            <!-- REGISTER COMMANDE -->
         <div id="modal2" class="modal fade" role="dialog">
             <div class="log-in-pop">
-        
+
                 <div class="log-in-pop-right">
                     <a href="#" class="pop-close" data-dismiss="modal"><img src="{{asset('assetAdmin/images/cancel.png')}}" alt="" />
                     </a>
                     <h4>Formulaire de commande</h4>
-                    <form class="s12" method="post" action="{{route('paytech')}}">
+                    <form class="s12" method="post" action="{{route('storeCommande', $id)}}">
                     @csrf
                         <div>
                             <div class="input-field s12">
                                 <input type="text" data-ng-model="name1" class="validate" name="nom">
                                 <label for="nom">Nom Complet</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-field s12">
+                                <input type="email" class="validate" name="email">
+                                <label for="email">Email</label>
                             </div>
                         </div>
                         <div>
@@ -383,6 +389,7 @@
                             </div>
                         </div>
                         <div>
+                        <div>
                             <div class="input-field s12">
                                 <input type="date" class="validate">
                             </div>
@@ -392,6 +399,7 @@
                             <div class="input-field s4">
                                 <input type="submit" value="Valider" class="waves-effect waves-light log-in-btn"> </div>
                         </div>
+                        <input type="hidden" name="idVoiture" value="{{$id}}" selected>
                         <div>
                             {{-- <div class="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal1">Are you a already member ? Login</a> </div> --}}
                         </div>

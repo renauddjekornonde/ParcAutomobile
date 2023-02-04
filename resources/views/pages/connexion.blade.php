@@ -1,4 +1,5 @@
 @extends("rahim.baseInscription")
+@section('title', 'Connexion')
 @section("container")
 <body class="main-layout">
     <div class="container">
