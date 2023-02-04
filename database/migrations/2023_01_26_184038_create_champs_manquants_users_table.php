@@ -14,9 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->date('date_naissance');
-            $table->string('adresse');
-            $table->bigInteger('cni');
+            $table->date('date_naissance')->nullable();
+            $table->string('adresse')->nullable();
+            $table->bigInteger('cni')->nullable();
+             $table->integer('statut')->default(0); 
 
         });
     }

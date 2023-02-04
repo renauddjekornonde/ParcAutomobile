@@ -11,6 +11,7 @@ class Modele extends Model
     protected $fillable = [
         'nom_model',
         'couleur',
+        'prix',
         'voitures_id',
         'created_at',
         'updated_at'

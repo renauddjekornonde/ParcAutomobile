@@ -14,7 +14,7 @@ class VoitureController extends Controller
 {
     public function index(){
        // $voitures= Voitures::with('voiturePhoto')->get();
-       $voitures= Voitures::all();
+       $voitures= Voitures::get();
        $cars= Voitures::with('voiturePhotos')->get();
        $models= Voitures::with('models')->get();
        $marques= Marque::get();
@@ -51,6 +51,7 @@ class VoitureController extends Controller
             'nom_model'=>$input['model'],
             'couleur'=>$input['couleur'],
             'voitures_id'=>$idVoiture,
+            'prix'=>$input['prix'],
         ]);
         $idmodel= $model->id;
 

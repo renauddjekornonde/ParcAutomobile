@@ -11,9 +11,21 @@ use App\Models\Voitures;
 class PhotoController extends Controller
 {
     public function index(){
-        $car= Voitures::with('photoModel')->get();
+        $photos= Photo::with('photoModel')->get();
         $marques= Marque::all();
         $images= Photo::all();
-        return view('home.home', compact('marques','images'));
+        return view('home.home', compact('marques','images', 'photos'));
+    }
+
+      public function show($id)
+    {
+        $photos= Photo::findOrFail($id)->first();
+        $photosEtModel= Photo::where('id',$id)->with('photoModel')->get();
+        $photosModels= Photo::with('photoModel')->get();
+        $photoEtVoiture= Photo::where('id',$id)->with('photoVoiture')->get();
+        $marques= Marque::all();
+        $allPhoto= Photo::all();
+        //dd($photosEtModel);;
+        return view('home.detailVoiture', compact('photosModels','photos', 'photosEtModel','photoEtVoiture', 'marques', 'allPhoto'));
     }
 }

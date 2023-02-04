@@ -46,5 +46,7 @@
       <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
       <!-- =========================End ionicon================= -->
 
+      {{-- <script src="{{asset('assets/main/user/user.js')}}"></script> --}}
+
 </body>
 </html>

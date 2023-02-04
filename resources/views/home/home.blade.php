@@ -29,16 +29,16 @@
               <div class="col-md-12">
                  <div class="titlepage">
                     <h2>VARIETY OF CARS </h2>
-                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</span>
+                    {{-- <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</span> --}}
                  </div>
               </div>
            </div>
            <div class="row">
-             @foreach ($images as $image)
+             @foreach ($photos as $image)
              <div class="col-md-4 ">
                 <div class="car_box">
                    <figure><img src={{Storage::url($image->description)}} alt="#"/></figure>
-                   <h3>Mercedes</h3>
+                   <a href="{{route('showPhoto',$image->id)}}"><h3>{{$image->photoModel->nom_model}}</h3></a>
                 </div>
              </div>
              @endforeach

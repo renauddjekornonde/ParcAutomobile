@@ -1,4 +1,4 @@
-@extends("rahim.baseConnexion")
+@extends("rahim.baseInscription")
 @section("container")
 <body class="main-layout">
     <div class="container">
@@ -6,27 +6,43 @@
         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
           <div class="card card-signin my-5">
             <div class="card-body">
-            <h5 class="card-title text-center">Signi in</h5>
-              <form class="form-signin">
+            <h5 class="card-title text-center">Connexion</h5>
+              <form class="form-signin" method="post" action="{{ route('login')}}">
+                @csrf
+
+            @error('email')
+                <div class="alert alert-danger text-center fw-bold" role="alert">
+                    {{$message}}
+                </div>
+            @enderror
+
+            @error('password')
+                <div class="alert alert-danger text-center fw-bold" role="alert">
+                    {{$message}}
+                </div>
+            @enderror
+
                 <div class="form-label-group">
-                <label for="inputEmail">Email</label>
-                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus name="email">
+                <label for="email">Email</label>
+                  <input type="email" id="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email address" value="{{old('email')}}" required autocomplete="email" autofocus name="email">
                 </div>
 
                 <div class="form-label-group">
-                    <label for="inputPassword">Password</label>
-                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+                    <label for="password">Password</label>
+                  <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" name="password" required autocomplete="current-password">
+                </div> <br>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <div class="form-check form-switch">
+                        <input class="form-check-input fw-bold" type="checkbox" role="switch" id="remember" name="remember" {{old('remember')? 'checked': ''}}>
+                        <label class="form-check-label fw-bold" for="remember">Se souvenir de moi</label>
+                        </div>
+                    </div>
                 </div>
 
-<<<<<<< HEAD
-                <td><button type="button" data-toggle="modal" data-target="#photoModal" style="border:0px;" class="list-enq-name">S'inscrire</button>
-                </td> <br><br>
-
-                <button type="submit" class="btn btn-lg text-uppercase btn-block" >Se connecter</button></div>
-=======
-                <div class="input-field s12"><li><a href="{{route('register') }}" data-toggle="myModal" data-target="#myModal">Creer un compte</a></li> </div>
+                <p class="text-center text-muted mt-4 fw-bold">Vous n'avez pas de compte ? <a href="{{route('register')}}">Creer un compte</a> </p> <br>
                 <button type="submit" class="btn btn-lg text-uppercase btn-block" >Se connecter</button>
->>>>>>> c384160a190cb24cbd9cfc3becf16f5dd9f0c69f
                 <hr class="my-4">
               </form>
             </div>

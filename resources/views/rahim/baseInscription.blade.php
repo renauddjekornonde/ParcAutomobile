@@ -21,10 +21,10 @@
       <!-- Responsive-->
       <link rel="stylesheet" href={{asset("assetsA/css/responsive.css")}}>
       <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href={{asset("assetsA/css/jquery.mCustomScrollbar.min.css")}}>
+      {{-- <link rel="stylesheet" href={{asset("assetsA/css/jquery.mCustomScrollbar.min.css")}}> --}}
       <!-- Tweaks for older IEs-->
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      {{-- <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"> --}}
+      {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen"> --}}
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -50,7 +50,7 @@
                      <div class="full">
                         <div class="center-desk">
                            <div class="logo">
-                              <a href="index.html"><img src={{asset("assetsA/images/logo1.png")}} alt="#" /></a>
+                              <a href="index.html"><img src={{asset("assetsA/images/newlogo.png")}} alt="#" /></a>
                            </div>
                         </div>
                      </div>
@@ -72,7 +72,7 @@
                                  <a class="nav-link" href="{{route('contact')}}">Contact</a>
                               </li>
                            </ul>
-                           <div class="sign_btn" ><a href="{{route('connexion')}}">Sign in</a></div>
+                           <div class="sign_btn" ><a href="{{route('login')}}">Sign in</a></div>
                         </div>
                      </nav>
                   </div>
@@ -82,5 +82,12 @@
       </header>
 
 @yield("container")
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+<script src="{{asset('assets/main/user/user.js')}}"></script>
+
+</body>
 </html>
 

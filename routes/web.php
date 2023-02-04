@@ -5,6 +5,9 @@ use App\Http\Controllers\VoitureController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\MarqueController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\AdminController;
+use Symfony\Component\Console\Input\Input;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,14 +23,6 @@ use App\Http\Controllers\MarqueController;
 
 
 
-Route::get('/admin', function () {
-    return view('admin.index');
-});
-
-Route::get('/detail', function () {
-    return view('home.detailVoiture');
-});
-
 Route::get('/contact', function () {
     return view('pages.contact');
 })->name('contact');
@@ -38,33 +33,50 @@ Route::get('/services', function () {
 
 Route::get('/createVoiture', [VoitureController::class, 'create'])->name('createVoiture');
 Route::get('/createMarque', [MarqueController::class, 'create'])->name('createMarque');
+Route::get('/createUser', [AdminController::class, 'create'])->name('createUser');
 
 Route::get('/afficheMessage', [MessageController::class, 'afficheMessage'])->name('afficheMessage');
 Route::get('/messageById/{id}', [MessageController::class, 'getMessageById'])->name('messageById');
 
 Route::get('/', [PhotoController::class, 'index'])->name('home');
 
-Route::get('/indexAdmin', [VoitureController::class, 'index'])->name('indexAdmin');
+Route::get('/indexAdmin', [VoitureController::class, 'index'])
+->middleware('auth')
+->name('indexAdmin');
+
 Route::match(['get', 'post'], '/storeVoiture', [VoitureController::class, 'store'])->name('storeVoiture');
 
 Route::match(['get', 'post'], '/storeMarque', [MarqueController::class, 'store'])->name('storeMarque');
 
+Route::match(['get', 'post'], '/storeUser', [AdminController::class, 'store'])->name('storeUser');
+
 Route::get('/showVoiture/{id}', [VoitureController::class, 'show'])->name('showVoiture');
 Route::get('/showMarque/{id}', [MarqueController::class, 'show'])->name('showMarque');
+Route::get('/showPhoto/{id}', [PhotoController::class, 'show'])->name('showPhoto');
+Route::get('/showUser/{id}', [AdminController::class, 'show'])->name('showUser');
 
 Route::get('/editerVoiture/{id}', [VoitureController::class, 'editer'])->name('editerVoiture');
 Route::get('/editerMarque/{id}', [MarqueController::class, 'editer'])->name('editerMarque');
+Route::get('/editerUser/{id}', [AdminController::class, 'editer'])->name('editerAdmin');
 
 Route::patch('/updateVoiture/{id}', [VoitureController::class, 'update'])->name('updateVoiture');
 Route::patch('/updateMarque/{id}', [MarqueController::class, 'update'])->name('updateMarque');
+Route::patch('/updateUser/{id}', [AdminController::class, 'update'])->name('updateUser');
 
-Route::patch('/setStatut/{id}', [VoitureController::class, 'setStatut'])->name('setStatut');
-Route::patch('/setStatut/{id}', [MarqueController::class, 'setStatut'])->name('setStatut');
+Route::patch('/setStatut/{id}', [VoitureController::class, 'setStatut'])->name('setStatutVoiture');
+Route::patch('/setStatutMarque/{id}', [MarqueController::class, 'setStatut'])->name('setStatutMarque');
+Route::patch('/setStatutUser/{id}', [AdminController::class, 'setStatut'])->name('setStatutUser');
 
 Route::delete('/deleteVoiture/{id}', [VoitureController::class, 'destroy'])->name('destroyVoiture');
 Route::delete('/deleteMarque/{id}', [MarqueController::class, 'destroy'])->name('destroyMarque');
+Route::delete('/deleteUser/{id}', [AdminController::class, 'destroy'])->name('destroyUser');
 
 Route::post('/message',[MessageController::class, 'store'])->name('message');
+Route::get('/logout', [UsersController::class, 'logout'])->name('ap_logout');
+
+Route::post('/existEmail', [UsersController::class, 'existEmail'])->name('existEmail');
+
+Route::get('/userChecker', [UsersController::class, 'userChecker'])->name('userChecker');
 
 
 
@@ -91,5 +103,5 @@ Route::post('/my-ipn', function () {
     else{
         //not from PayTech
     }
-});
+})->name('paytech');
 

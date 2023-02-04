@@ -44,7 +44,7 @@
                    <div class="full">
                       <div class="center-desk">
                          <div class="logo">
-                            <a href="index.html"><img src={{asset("assetsA/images/logo1.png")}} alt="#" /></a>
+                            <a href="index.html"><img src={{asset("assetsA/images/newlogo.png")}} alt="#" /></a>
                          </div>
                       </div>
                    </div>
@@ -66,7 +66,7 @@
                                <a class="nav-link" href="{{route('contact')}}">Contact</a>
                             </li>
                          </ul>
-                         <div class="sign_btn"><a href="{{route('connexion')}}">Sign in</a></div>
+                         <div class="sign_btn"><a href="{{route('login')}}">Sign in</a></div>
                       </div>
                    </nav>
                 </div>
@@ -76,8 +76,8 @@
     </header>
    <!-- body -->
 @yield("content")
-   <footer>
+   {{-- <footer>
     <p>Copyright &ESITEC-AUTO</p>
-   </footer>
+   </footer> --}}
 </html>
 

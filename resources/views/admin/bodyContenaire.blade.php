@@ -10,12 +10,12 @@
                     <li><a href="{{route('indexAdmin')}}" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a>
                     </li>
 
-                    <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-user" aria-hidden="true"></i> Utilisateur</a>
+                    <li><a href="{{route('createUser')}}" class="collapsible-header"><i class="fa fa-user" aria-hidden="true"></i> Utilisateur</a>
                         <div class="collapsible-body left-sub-menu">
-                            <ul>
+                            {{-- <ul>
                                 <li><a href="admin-event-all.html">Liste</a>
                                 </li>
-                            </ul>
+                            </ul> --}}
                         </div>
                     </li>
                     <li><a href="{{route('createMarque')}}" class="collapsible-header"><i class="fa fa-maxcdn" aria-hidden="true"></i> Marque</a>

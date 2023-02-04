@@ -89,6 +89,14 @@
                                             </div>
 
                                             <div class="form-group">
+                                                <label for="model">Prix</label>
+                                                <input type="number" name="prix" class="form-control" id="prix" placeholder="Entrez le prix de la voiture" required>
+                                                @error('prix')
+                                                <p class="text text-danger">{{$message}}</p>
+                                                @enderror
+                                            </div>
+
+                                            <div class="form-group">
                                                 <label for="marque">Couleur</label>
                                                 <input type="text" name="couleur" class="form-control" id="couleur" placeholder="Entrez la couleur de la voiture" >
                                             </div>
@@ -141,7 +149,7 @@
                                     @foreach($voitures as $voiture)
                                         <tr>
                                         @foreach ($marques as $marque)
-                                            <td><button type="button" data-toggle="modal" data-target="#photoModal" style="border:0px;" class="list-enq-name">{{$marque->voitureMarque->nom_marque}}</button> 
+                                            <td><button type="button" data-toggle="modal" data-target="#photoModal" style="border:0px;" class="list-enq-name">{{$marque->voitureMarque->nom_marque}}</button>
                                             </td>
                                         @endforeach
 
@@ -158,14 +166,15 @@
                                                     <div class="modal-body">
                                                     <!-- Boucle pour afficher chaque photo dans la liste -->
                                                     @foreach ($cars as $voiture)
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                        @foreach($voiture->voiturePhotos as $car)
-                                                            <img src="{{Storage::url($car->description)}}" class="img-thumbnail" >
-                                                        @endforeach
-                                                        </div>
-                                                        {{-- <?= $voi->voitures->description?> --}}
 
+                                                    <div class="row">
+                                                     @foreach($voiture->voiturePhotos as $car)
+                                                        <div class="col-md-3">
+
+                                                            <img src="{{Storage::url($car->description)}}" class="img-thumbnail" >
+                                                            <br>
+                                                        </div>
+                                                            @endforeach
                                                     @endforeach
                                                     </div>
                                                     </div>
@@ -184,12 +193,12 @@
                                                 @endforeach
                                                 </td>
 
-                                        
+
                                             <td><span class="list-enq-name">
                                                 @foreach($model->models as $m)
                                                     {{$m->couleur}}
                                                 @endforeach
-                                            
+
                                             </span>
                                             </td>
                                             @endforeach
@@ -200,7 +209,7 @@
                                             </td>
                                             <td>
                                                 @if ($voiture->statut==0)
-                                                <form action="{{route('setStatut', $voiture->id)}}" method="POST">
+                                                <form action="{{route('setStatutVoiture', $voiture->id)}}" method="POST">
                                                     @csrf
                                                     @method('PATCH')
                                                     <button  style="border: none;" type="submit">

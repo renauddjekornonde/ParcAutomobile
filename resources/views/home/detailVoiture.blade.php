@@ -37,7 +37,7 @@
                 <div class="ed-mm-left">
                     <div class="wed-logo">
                         <a href="index-2.html">
-                            <img src={{asset("assetAdmin/images/logo1.png")}} alt="" />
+                            <img src={{asset("assetAdmin/images/newlogo.png")}} alt="" />
                             <!-- Blog News -->
 						</a>
                     </div>
@@ -109,22 +109,29 @@
                     <div class="col-md-12">
                         <div class="wed-logo">
                             <a href="index-2.html">
-                                <img src={{asset("assetAdmin/images/logo1.png")}} alt="" />
+                                <img src={{asset("assetAdmin/images/newlogo.png")}} alt="" />
                             </a>
                         </div>
                         <div class="main-menu">
                             <ul>
-                                <li><a href="#" style="text-transform: uppercase;">Accueil</a>
+                                <li><a href="{{route('home')}}" style="text-transform: uppercase;">Accueil</a>
                                 </li>
                                 <li>
-                                    <a href="about.html" class="mm-arr" style="text-transform: uppercase;">Service</a>
+                                    <a href="{{route('service')}}" class="mm-arr" style="text-transform: uppercase;">Service</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="mm-arr" style="text-transform: uppercase;">Contact</a>
+                                    <a href="{{route('contact')}}" class="mm-arr" style="text-transform: uppercase;">Contact</a>
                                 </li>
+                                @auth
                                 <li>
-                                    <div class="sign_btn"><a href="#">Sign in</a></div>
+                                    <a href="{{route('ap_logout')}}"><i class="fa fa-user"></i>{{"  ".Auth::user()->name}}</a>
                                 </li>
+                                @endauth
+                                @guest
+                                <li>
+                                    <div class="sign_btn"><a href="{{route('login')}}">Sign in</a></div>
+                                </li>
+                                @endguest
                             </ul>
                             
                         </div>
@@ -147,22 +154,32 @@
                     <div class="ho-ev-latest ho-ev-latest-bg-1">
                         <div class="ho-lat-ev">
                             <h3 style="color: white;">Marque</h3>
-                            <p>Nom de la marque.</p>
+                            @foreach ($photoEtVoiture as $marqueId)
+                                @foreach ($marques as $marque)
+                                    @if ($marqueId->photoVoiture->marque_id==$marque->id)
+                                        <p>{{$marque->nom_marque}}</p>
+                                    @endif
+                                @endforeach
+                            @endforeach
                         </div>
                     </div>
                     <div class="ho-event pg-eve-main pg-blog">
                         <ul>
                             <li>
-                                <div class="ho-ev-date pg-eve-date"><span>07</span><span>jan,2018</span>
+                                <div class="ho-ev-date pg-eve-date"><span>{{date('d')}}</span><span>{{date('M')}},{{date('Y')}}</span>
                                 </div>
                                 <div class="pg-eve-desc pg-blog-desc">
                                     <a href="event-register.html">
-                                        <h4>Nom de la Voiture</h4>
+                                        @foreach ($photosEtModel as $model)
+                                        <h4>{{$model->photoModel->nom_model}}</h4>
+                                        @endforeach
                                     </a>
-                                    <img src={{asset("assetAdmin/images/blog/6.jpg")}} alt="">
+                                    {{-- @foreach ($photos as $photo) --}}
+                                    <img src={{Storage::url($photos->description)}} alt="">
+                                    {{-- @endforeach --}}
                                 </div> 
                                 <div class="pg-eve-reg pg-blog-reg">
-                                    <a href="blog-details.html">Commander</a>
+                                    <a href="#!" data-toggle="modal" data-target="#modal2">Commander</a>
                                 </div>
                             </li>
                         </ul>
@@ -172,7 +189,7 @@
                     <div class="ho-ev-latest ho-ev-latest-bg-3">
                         <div class="ho-lat-ev">
                             <h4>Information de la voiture</h4>
-                            <p>Student area velit convallis venenatis lacus quis, efficitur lectus.</p>
+                            <p></p>
                         </div>
                     </div>
                     <div class="ho-st-login">
@@ -181,20 +198,21 @@
                         </ul>
                         <div id="hom-vijay" class="row col s12">
                          <div style="display:flex; position: relative; justify-content: space-between">
+                            @foreach ($photosEtModel as $model)
 
                                 <div >
-                                    <h4>  <a href="#">Prix</a>  </h4>
+                                    <h4  class="fw-bold"> Prix  </h4>
                                 </div>
 
                                 <div class="me-auto">
-                                202
+                                    {{$model->photoModel->prix}} FCFA
                                 </div>
                             </div> <br> <br>
 
                             <div style="display:flex; position: relative; justify-content: space-between">
 
                                 <div >
-                                    <h4>  <a href="#">Vitesse</a>  </h4>
+                                    <h4  class="fw-bold">  Vitesse  </h4>
                                 </div>
 
                                 <div class="me-auto">
@@ -205,7 +223,7 @@
                             <div style="display:flex; position: relative; justify-content: space-between">
 
                                 <div >
-                                    <h4>  <a href="#">Moteur</a>  </h4>
+                                    <h4  class="fw-bold">  Moteur  </h4>
                                 </div>
 
                                 <div class="me-auto">
@@ -216,23 +234,24 @@
                             <div style="display:flex; position: relative; justify-content: space-between">
 
                                 <div >
-                                    <h4>  <a href="#">Couleur</a>  </h4>
+                                    <h4  class="fw-bold">  Couleur  </h4>
                                 </div>
 
                                 <div class="me-auto">
-                                32
+                                    {{$model->photoModel->couleur}}
                                 </div>
                             </div> <br> <br>
 
                             <div style="display:flex; position: relative; justify-content: space-between">
 
                                 <div >
-                                    <h4>  <a href="#">Carburant</a>  </h4>
+                                    <h4>  Carburant  </h4>
                                 </div>
 
                                 <div class="me-auto">
                                 300
                                 </div>
+                                @endforeach
                             </div>
                         </div>
                         <div id="hom_log" class="col s12">
@@ -253,54 +272,52 @@
                     <!--<p>VOICI LA LISTES DE QUELQUES ARTICLES.</p>-->
                 </div>
             </div>
+            
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <div class="item slider1 active">
-                        <!-- <img src="images/slider/4.jpg" alt=""> -->
-                        <div class="home-top-cour col-6">
+                        <div class="home-top-cour col-3">
                             <!--POPULAR COURSES IMAGE-->
-                            <div class="col-md-3"> <img src={{asset("assetAdmin/images/course/sm-4.jpg")}} alt=""> </div>
+                           
+                            <div class="col-md-3" style="margin-left:40%"> <img src={{Storage::url($photos->description)}} alt=""> </div>
+                            <div class="hom-list-share" style="margin-left:400px;">
+                                    <ul>
+                                        <li><a href="{{route('showPhoto',$photos->id)}}"><i class="fa fa-eye" aria-hidden="true"></i> Voir</a> </li>
+                                     
+                                    </ul>
+                                </div>
                             <!--POPULAR COURSES: CONTENT-->
                             <div class="col-md-9 home-top-cour-desc">
-                                <a href="course-details.html">
-                                    <h3>Building, Construction Management</h3>
-                                </a>
-                                <h4>Technology / Construction / Building</h4>
-                                <p>Classes started from coming friday(21 jun 2017),total seats 72 and available seats 10</p> <span class="home-top-cour-rat">4.2</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                     @foreach ($photosModels as $index=> $photo)
+                    <div class="item">
+                        <div class="home-top-cour">
+                            <!--POPULAR COURSES IMAGE-->
+                           
+                            <div class="row"><div class="col-md-3" style="margin-left:40%"> <img src={{Storage::url($photo->description)}} alt="" style="width:100%"> </div></div>
+                            <div class="hom-list-share" style="margin-left:400px;">
+                                <ul>
+                                    <li><a href="{{route('showPhoto',$photo->id)}}">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>Voir</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--POPULAR COURSES: CONTENT-->
+                            <div class="col-md-9 home-top-cour-desc">
+               
                                 <div class="hom-list-share">
-                                    <ul>
-                                        <li><a href="course-details.html"><i class="fa fa-bar-chart" aria-hidden="true"></i> Book Now</a> </li>
-                                        <li><a href="course-details.html"><i class="fa fa-eye" aria-hidden="true"></i>32 Aavailable</a> </li>
-                                        <li><a href="course-details.html"><i class="fa fa-share-alt" aria-hidden="true"></i> 124</a> </li>
-                                    </ul>
+                          
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
-                        <!-- <img src="images/slider/6.jpg" alt="">--> 
-                        <div class="home-top-cour">
-                            <!--POPULAR COURSES IMAGE-->
-                            <div class="col-md-3"> <img src={{asset("assetAdmin/images/course/sm-4.jpg")}} alt=""> </div>
-                            <!--POPULAR COURSES: CONTENT-->
-                            <div class="col-md-9 home-top-cour-desc">
-                                <a href="course-details.html">
-                                    <h3>Building, Construction Management</h3>
-                                </a>
-                                <h4>Technology / Construction / Building</h4>
-                                <p>Classes started from coming friday(21 jun 2017),total seats 72 and available seats 10</p> <span class="home-top-cour-rat">4.2</span>
-                                <div class="hom-list-share">
-                                    <ul>
-                                        <li><a href="course-details.html"><i class="fa fa-bar-chart" aria-hidden="true"></i> Book Now</a> </li>
-                                        <li><a href="course-details.html"><i class="fa fa-eye" aria-hidden="true"></i>32 Aavailable</a> </li>
-                                        <li><a href="course-details.html"><i class="fa fa-share-alt" aria-hidden="true"></i> 124</a> </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div> 
+                    @endforeach 
                 </div>
+                
     
                 <!-- Left and right controls -->
                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -336,6 +353,52 @@
             </div>
         </div>
     </section>
+
+            <!-- REGISTER SECTION -->
+        <div id="modal2" class="modal fade" role="dialog">
+            <div class="log-in-pop">
+        
+                <div class="log-in-pop-right">
+                    <a href="#" class="pop-close" data-dismiss="modal"><img src="{{asset('assetAdmin/images/cancel.png')}}" alt="" />
+                    </a>
+                    <h4>Formulaire de commande</h4>
+                    <form class="s12" method="post" action="{{route('paytech')}}">
+                    @csrf
+                        <div>
+                            <div class="input-field s12">
+                                <input type="text" data-ng-model="name1" class="validate" name="nom">
+                                <label for="nom">Nom Complet</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-field s12">
+                                <input type="text" class="validate" name="adresse">
+                                <label for="adresse">Adresse</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-field s12">
+                                <input type="text" class="validate" name="cni">
+                                <label for="cni">Numéro Carte D'identité</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-field s12">
+                                <input type="date" class="validate">
+                            </div>
+                            <label for="naissance">Naissance</label>
+                        </div>
+                        <div>
+                            <div class="input-field s4">
+                                <input type="submit" value="Valider" class="waves-effect waves-light log-in-btn"> </div>
+                        </div>
+                        <div>
+                            {{-- <div class="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal1">Are you a already member ? Login</a> </div> --}}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
     <!--Import jQuery before materialize.js-->
     <script src={{asset("assetAdmin/js/main.min.js")}}></script>

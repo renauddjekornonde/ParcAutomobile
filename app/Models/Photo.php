@@ -16,7 +16,7 @@ class Photo extends Model
         'model_id'
     ];
     public function photoVoiture(){
-        return $this->belongsTo(Voitures::class);
+        return $this->belongsTo(Voitures::class, 'voitures_id', 'marque_id');
     }
 
     public function photoModel(){

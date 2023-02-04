@@ -65,22 +65,37 @@
                                 <div class="modal-content">
 
                                     <div class="modal-header">
-                                        <h5 class="modal-title">Ajouter une Marque</h5>
+                                        <h5 class="modal-title">Ajouter un utilisateur</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
 
                                     <div class="modal-body">
-                                        <form method="POST" action="{{route('storeMarque')}}">
+                                        <form method="POST" action="{{route('storeUser')}}">
                                             @csrf
 
                                             <div class="form-group">
-                                                <label for="marque">Nom</label>
-                                                <input type="text" name="marque" class="form-control" id="marque" placeholder="Entrez la marque de la voiture" >
+                                                <label for="nom">Nom complet</label>
+                                                <input type="text" name="nom" class="form-control" id="nom" placeholder="Entrez le nom" >
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email">Email</label>
+                                                <input type="email" name="email" class="form-control" id="email" placeholder="Entrez Adresse Email" >
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="password">Password</label>
+                                                <input type="password" name="password" class="form-control" id="password" placeholder="Mot de passe" >
+                                            </div>
+                                            <div class="form-group">
+                                                <select id="statut" name="statut" class="form-select">
+                                                <option>Admin</option>
+                                                <option>Simple User</option>
+                                                <option>Client</option>
+                                                </select>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="submit" class="btn btn-primary">Envoyer</button>
+                                                <button type="submit" class="btn btn-primary">Enregistrer</button>
                                             </div>
                                         </form>
                                     </div>
@@ -98,52 +113,54 @@
                                 <thead>
                                     <tr>
                                         {{-- <th>Image</th> --}}
-                                        <th>Identifiant</th>
                                         <th>Nom</th>
-                                        <th>Publier le</th>
+                                        <th>Email</th>
+                                        <th>Ajouter le</th>
                                         <th>Status</th>
                                         <th>View</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($marques as $marque)
+                                    @foreach($users as $user)
                                         <tr>
-                                            {{-- <td><button  data-toggle="modal" data-target="#photoModal" style="border:0px;" class="list-enq-name">{{$marque->nom_marque}}</button> 
+                                            {{-- <td><button  data-toggle="modal" data-target="#photoModal" style="border:0px;" class="list-enq-name">{{$marque->nom_marque}}</button>
                                             </td> --}}
 
                                             <td>
                                                 <span class="list-enq-name">
-                                               {{$marque->id}}</span>
+                                               {{$user->name}}</span>
                                             </td>
                                             <td>
                                                 <span class="list-enq-name">
-                                               {{$marque->nom_marque}}</span>
+                                               {{$user->email}}</span>
                                             </td>
                                             <td>
                                                 <span class="list-enq-name">
-                                               {{$marque->created_at->format('d/m/y')}}</span>
+                                               {{$user->created_at->format('d/m/y')}}</span>
                                             </td>
                                             <td>
-                                                @if ($marque->statut==0)
-                                                <form action="{{route('setStatutMarque', $marque->id)}}" method="POST">
+                                                @if ($user->statut==0)
+                                                <form action="{{route('setStatutUser', $user->id)}}" method="POST">
                                                     @csrf
                                                     @method('PATCH')
                                                     <button  style="border: none;" type="submit">
-                                                    <span class="label label-success">Stock</span></button>
+                                                    <span class="label label-success">Simple User</span></button>
                                                 </form>
+                                                @elseif($user->statut==1)
+                                                <span class="label label-primary">Admin</span>
                                                 @else
-                                                <span class="label label-danger">Hors Stock</span>
+                                                <span class="label label-success">Client</span>
                                                 @endif
 
                                             </td>
-                                        @if ($marque)
+                                        @if ($user)
                                             <td style="display: inline-block;">
                                                 <h5 style="float: left; margin-right: 10px;">
                                                     <button id="button"  data-toggle="modal" data-target="#modifierVoiture" style="color:#131105; background-color:white; text-decoration: none; border: none; "><ion-icon name="pencil-outline"></ion-icon></button>
                                                 </h5>
 
                                                 <h5 style="float: right; margin-left: 10px;">
-                                                    <form action="{{route('destroyMarque', $marque->id)}}" method="POST">
+                                                    <form action="{{route('destroyUser', $user->id)}}" method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" style="color: red; border: none; background: white;">
@@ -152,27 +169,45 @@
                                                     </form>
                                                 </h5>
                                             </td>
-                                        {{-- modal pour modifer une marque --}}
+                                        {{-- modal pour modifer une utilisateur --}}
                                         <div class="modal" id="modifierVoiture">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
 
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title">Modifier une Marque</h5>
+                                                        <h5 class="modal-title">Modifier un utilisateur</h5>
                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
 
                                                     <div class="modal-body">
-                                                        <form method="POST" action="{{route('updateMarque', $marque->id)}}">
+                                                        <form method="POST" action="{{route('updateUser', $user->id)}}">
                                                             @csrf
                                                             @method('PATCH')
 
                                                             <div class="form-group">
-                                                                <label for="marque">Nom</label>
-                                                                <input type="text" name="marque" class="form-control" id="marque" placeholder="Entrez la marque de la voiture" value="{{$marque->nom_marque}}">
+                                                                <label for="nom">Nom</label>
+                                                                <input type="text" name="nom" class="form-control" id="nom" placeholder="Entrez le nom" value="{{$user->name}}">
                                                             </div>
+                                                            <div class="form-group">
+                                                                <label for="email">Email</label>
+                                                                <input type="email" name="email" class="form-control" id="email" placeholder="Entrez Adresse Email" value="{{$user->email}}">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="password">Password</label>
+                                                                <input type="password" name="password" class="form-control" id="password" placeholder="Entrez Mot de Passe" value="{{$user->password}}">
+                                                            </div>
+                                                            {{-- <div class="form-group">
+                                                                <select id="statut" name="statut"  class="form-select">
+                                                                    <option value= "..." >Statut</option>
+
+                                                                    <option value="1">Admin</option>
+                                                                    <option value="0" selected>Simple User</option>
+                                                                    <option value="3" selected>Client</option>
+
+                                                                </select>
+                                                            </div> --}}
 
                                                             <div class="modal-footer">
                                                                 <button type="submit" class="btn btn-primary">Modifier</button>
@@ -182,7 +217,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        {{-- end modal pour modifier une marque --}}
+                                        {{-- end modal pour modifier un utilisateur --}}
                                         @endif
                                     </tr>
                                 @endforeach

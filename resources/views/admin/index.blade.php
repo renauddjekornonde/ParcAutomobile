@@ -77,7 +77,7 @@
                                             {{$marque->nom_marque}}
                                             </button>
                                         </td>
-                            
+
                                         <td>
                                         <span class="list-enq-name">
                                            {{$marque->created_at->format('d/m/y')}}</span>
@@ -85,7 +85,7 @@
 
                                         <td>
                                             @if ($marque->statut==0)
-                                            <form action="{{route('setStatut', $marque->id)}}" method="POST">
+                                            <form action="{{route('setStatutMarque', $marque->id)}}" method="POST">
                                                 @csrf
                                                 @method('PATCH')
                                                 <button  style="border: none;" type="submit">
@@ -139,8 +139,8 @@
                                         </span>
                                         </td>
                                     @endforeach
-                                    
-                                        
+
+
                                          @foreach($models as $model)
                                          <td>
                                             <a href="#"><span class="list-enq-name">
@@ -149,7 +149,7 @@
                                             @endforeach
                                         </td>
                                         @endforeach
-                                        
+
                                         <td>
                                             <span class="list-enq-name">
                                            {{$voiture->created_at->format('d/m/y')}}</span>
@@ -161,7 +161,7 @@
                                         <td>03 Jun 1990</td>-->
                                         <td>
                                             @if ($voiture->statut==0)
-                                            <form action="{{route('setStatut', $voiture->id)}}" method="POST">
+                                            <form action="{{route('setStatutVoiture', $voiture->id)}}" method="POST">
                                                 @csrf
                                                 @method('PATCH')
                                                 <button  style="border: none;" type="submit">

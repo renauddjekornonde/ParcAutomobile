@@ -27,7 +27,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
       <style>
         body{
-            background-color: #1EA6C0;
+            background-color: #A9A9A9;
         }
       </style>
       <!--[if lt IE 9]>
@@ -43,7 +43,7 @@
                 <div class="full">
                    <div class="center-desk">
                       <div class="logo">
-                         <a href="index.html"><img src={{asset("assetsA/images/logo1.png")}} alt="#" /></a>
+                         <a href="index.html"><img src={{asset("assetsA/images/newlogo.png")}} alt="#" /></a>
                       </div>
                    </div>
                 </div>
@@ -65,7 +65,7 @@
                             <a class="nav-link" href="{{route('contact')}}">Contact</a>
                          </li>
                       </ul>
-                      <div class="sign_btn"><a href="{{route('connexion')}}">Sign in</a></div>
+                      <div class="sign_btn"><a href="{{route('login')}}">Sign in</a></div>
                    </div>
                 </nav>
              </div>
@@ -76,7 +76,16 @@
    <!-- body -->
    @yield("container")
    <footer>
-    <p>Copyright &ESITEC-AUTO</p>
-   </footer>
+    <div class="copyright" style="background-color: #313f96; color:antiquewhite">
+       <div class="container">
+          <div class="row">
+             <div class="col-md-12">
+                <p style=" color:antiquewhite">© 2019 All Rights Reserved. Design by <a href="https://html.design/" style=" color:antiquewhite"> ESITEC AUTO</a></p>
+             </div>
+          </div>
+       </div>
+    </div>
+ <!-- </div> -->
+</footer>
 </html>
 

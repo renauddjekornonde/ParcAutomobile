@@ -46,7 +46,7 @@
                      <div class="full">
                         <div class="center-desk">
                            <div class="logo">
-                              <a href="index.html"><img src={{asset("assets/images/logo1.png")}} alt="#" /></a>
+                              <a href="index.html"><img src={{asset("assets/images/newlogo.png")}} alt="#" /></a>
                            </div>
                         </div>
                      </div>
@@ -67,8 +67,15 @@
                               <li class="nav-item">
                                  <a class="nav-link" href="{{route('contact')}}">Contact</a>
                               </li>
-                           </ul>
-                           <div class="sign_btn"><a href="{{route('login')}}">Sign in</a></div>
+                              @auth
+                              <li class="nav-item">
+                                <a class="nav-link" href="{{route('ap_logout')}}"><i class="fa fa-user"></i>{{"  ".Auth::user()->name}}</a>
+                              </li>
+                              @endauth
+                            </ul>
+                           @guest
+                           <div class="sign_btn"><a href="{{ route('login') }}">Sign in</a></div>
+                           @endguest
                         </div>
                      </nav>
                   </div>
@@ -106,6 +113,7 @@
       <script src={{asset("assets/js/custom.js")}}></script>
       <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
       <!-- Animation jquery -->
+      {{-- <script src="{{asset('assets/main/user/user.js')}}"></script> --}}
 
    </body>
 </html>
