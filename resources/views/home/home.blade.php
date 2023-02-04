@@ -54,7 +54,7 @@
            <div class="row">
               <div class="col-md-12">
                  <div class="titlepage">
-                    <h2>What is says our cutomer</h2>
+                    <h2>Quels sont les avis de nos clients?</h2>
                  </div>
               </div>
            </div>
@@ -75,10 +75,10 @@
                                 </div>
                                 <div class="our cross_layout">
                                    <div class="test_box">
-                                      <h4>Due markes</h4>
-                                      <span>Rental</span>
-                                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit ess</p>
-                                      <i><img src={{asset("assets/images/te1.png")}} alt="#"/></i>
+                                      <h4>Abdourahim DIOUF</h4>
+                                      <span>Developper</span>
+                                      <p>ESITEC AUTO la meilleure vente de voitures en ligne!</p>
+                                      {{-- <i><img src={{asset("assets/images/te1.png")}} alt="#"/></i> --}}
                                    </div>
                                 </div>
                              </div>
@@ -88,31 +88,31 @@
                           <div class="container">
                              <div class="carousel-caption">
                                 <div class="cross_img">
-                                   <figure><img src={{asset("assets/images/cross_img.png")}} alt="#"/></figure>
+                                   <figure><img src={{asset("assets/images/renaud.png")}} alt="#"/></figure>
                                 </div>
                                 <div class="our cross_layout">
                                    <div class="test_box">
-                                      <h4>Due markes</h4>
-                                      <span>Rental</span>
-                                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit ess</p>
-                                      <i><img src={{asset("assets/images/te1.png")}} alt="#"/></i>
+                                      <h4>Renaud Djerkononde RAOUDEL</h4>
+                                      <span>Developper</span>
+                                      <p>ESITEC AUTO est la meilleure expèrience de vente de voitures que j'ai vu</p>
+                                      {{-- <i><img src={{asset("assets/images/renaud.png")}} alt="#"/></i> --}}
                                    </div>
                                 </div>
                              </div>
                           </div>
                        </div>
-                       <div class="carousel-item">
+                       {{-- <div class="carousel-item"> --}}
                           <div class="container">
-                             <div class="carousel-caption">
-                                <div class="cross_img">
-                                   <figure><img src={{asset("assets/images/cross_img.png")}} alt="#"/></figure>
+                             {{-- <div class="carousel-caption">
+                                <div class="cross_img"> --}}
+                                   {{-- <figure><img src={{asset("assets/images/")}} alt="#"/></figure>
                                 </div>
                                 <div class="our cross_layout">
                                    <div class="test_box">
                                       <h4>Due markes</h4>
                                       <span>Rental</span>
                                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit ess</p>
-                                      <i><img src={{asset("assets/images/te1.png")}} alt="#"/></i>
+                                      <i><img src={{asset("assets/images/te1.png")}} alt="#"/></i> --}}
                                    </div>
                                 </div>
                              </div>
