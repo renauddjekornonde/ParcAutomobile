@@ -108,7 +108,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="wed-logo">
-                            <a href="index-2.html">
+                            <a href="{{route('home')}}">
                                 <img src={{asset("assetAdmin/images/newlogo.png")}} alt="" />
                             </a>
                         </div>
@@ -216,7 +216,7 @@
                                 </div>
 
                                 <div class="me-auto">
-                                100
+                                4
                                 </div>
                             </div> <br> <br>
 
@@ -227,7 +227,7 @@
                                 </div>
 
                                 <div class="me-auto">
-                                56
+                                Gazoil
                                 </div>
                             </div> <br> <br>
 
@@ -244,13 +244,13 @@
 
                             <div style="display:flex; position: relative; justify-content: space-between">
 
-                                <div >
+                                {{-- <div >
                                     <h4>  Carburant  </h4>
                                 </div>
 
                                 <div class="me-auto">
                                 300
-                                </div>
+                                </div> --}}
                                 @endforeach
                             </div>
                         </div>
@@ -399,7 +399,9 @@
                             <div class="input-field s4">
                                 <input type="submit" value="Valider" class="waves-effect waves-light log-in-btn"> </div>
                         </div>
-                        <input type="hidden" name="idVoiture" value="{{$id}}" selected>
+                        @foreach($voiturePhotoId as $element)
+                        <input type="hidden" name="idVoiture" value="{{$element->voitures_id}}" selected>
+                        @endforeach
                         <div>
                             {{-- <div class="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal1">Are you a already member ? Login</a> </div> --}}
                         </div>

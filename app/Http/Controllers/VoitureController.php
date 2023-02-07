@@ -15,10 +15,10 @@ class VoitureController extends Controller
     public function index(){
        // $voitures= Voitures::with('voiturePhoto')->get();
        $voitures= Voitures::get();
-       $cars= Voitures::with('voiturePhotos')->get();
-       $models= Voitures::with('models')->get();
+       $cars= Photo::get();
+       $models= Modele::get();
        $marques= Marque::get();
-
+        //dump($cars);
         return View('admin.index', compact('voitures', 'cars', 'models', 'marques'));
     }
     public function create(){
@@ -26,8 +26,9 @@ class VoitureController extends Controller
         $cars= Voitures::with('voiturePhotos')->get();
         $models= Voitures::with('models')->get();
         $marques= Voitures::with('voitureMarque')->get();
-        //dump($marques);
-        return View('admin.createVoiture', compact('voitures', 'cars', 'models', 'marques'));
+        $modele= Modele::all();
+        //dump($marc);
+        return View('admin.createVoiture', compact('voitures', 'cars', 'models', 'marques', 'modele'));
     }
 
     public function store(Request $request){

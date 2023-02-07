@@ -19,13 +19,14 @@ class PhotoController extends Controller
 
       public function show($id)
     {
-        $photos= Photo::findOrFail($id)->first();
+        $photos= Photo::findOrFail($id);
         $photosEtModel= Photo::where('id',$id)->with('photoModel')->get();
         $photosModels= Photo::with('photoModel')->get();
         $photoEtVoiture= Photo::where('id',$id)->with('photoVoiture')->get();
         $marques= Marque::all();
+        $voiturePhotoId= Photo::where('id',$id)->get();
         $allPhoto= Photo::all();
-        //dd($photosEtModel);;
-        return view('home.detailVoiture', compact('id','photosModels','photos', 'photosEtModel','photoEtVoiture', 'marques', 'allPhoto'));
+        //dd($voiturePhotoId);;
+        return view('home.detailVoiture', compact('id','voiturePhotoId','photosModels','photos', 'photosEtModel','photoEtVoiture', 'marques', 'allPhoto'));
     }
 }

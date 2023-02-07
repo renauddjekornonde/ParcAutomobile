@@ -35,6 +35,8 @@ Route::get('/services', function () {
 Route::get('/createVoiture', [VoitureController::class, 'create'])->name('createVoiture');
 Route::get('/createMarque', [MarqueController::class, 'create'])->name('createMarque');
 Route::get('/createUser', [AdminController::class, 'create'])->name('createUser');
+Route::get('/createCommande', [CommandeController::class, 'create'])->name('createCommande');
+Route::get('/commandeValide', [CommandeController::class, 'create'])->name('commandeValide');
 
 Route::get('/afficheMessage', [MessageController::class, 'afficheMessage'])->name('afficheMessage');
 Route::get('/messageById/{id}', [MessageController::class, 'getMessageById'])->name('messageById');
@@ -57,25 +59,31 @@ Route::get('/showVoiture/{id}', [VoitureController::class, 'show'])->name('showV
 Route::get('/showMarque/{id}', [MarqueController::class, 'show'])->name('showMarque');
 Route::get('/showPhoto/{id}', [PhotoController::class, 'show'])->name('showPhoto');
 Route::get('/showUser/{id}', [AdminController::class, 'show'])->name('showUser');
+Route::get('/showCommande/{id}', [CommandeController::class, 'show'])->name('showCommande');
 
 Route::get('/editerVoiture/{id}', [VoitureController::class, 'editer'])->name('editerVoiture');
 Route::get('/editerMarque/{id}', [MarqueController::class, 'editer'])->name('editerMarque');
 Route::get('/editerUser/{id}', [AdminController::class, 'editer'])->name('editerAdmin');
+Route::get('/editerCommande/{id}', [CommandeController::class, 'editer'])->name('editerCommande');
 
 Route::patch('/updateVoiture/{id}', [VoitureController::class, 'update'])->name('updateVoiture');
 Route::patch('/updateMarque/{id}', [MarqueController::class, 'update'])->name('updateMarque');
 Route::patch('/updateUser/{id}', [AdminController::class, 'update'])->name('updateUser');
+Route::patch('/updateCommande/{id}', [CommandeController::class, 'update'])->name('updateCommande');
 
 Route::patch('/setStatut/{id}', [VoitureController::class, 'setStatut'])->name('setStatutVoiture');
 Route::patch('/setStatutMarque/{id}', [MarqueController::class, 'setStatut'])->name('setStatutMarque');
 Route::patch('/setStatutUser/{id}', [AdminController::class, 'setStatut'])->name('setStatutUser');
+Route::patch('/setStatutCommande/{id}', [CommandeController::class, 'setStatut'])->name('setStatutCommande');
 
 Route::delete('/deleteVoiture/{id}', [VoitureController::class, 'destroy'])->name('destroyVoiture');
 Route::delete('/deleteMarque/{id}', [MarqueController::class, 'destroy'])->name('destroyMarque');
 Route::delete('/deleteUser/{id}', [AdminController::class, 'destroy'])->name('destroyUser');
+Route::delete('/deleteCommande/{id}', [CommandeController::class, 'destroy'])->name('destroyCommande');
 
-Route::post('/message',[MessageController::class, 'store'])->name('message');
+Route::post('/message/',[MessageController::class, 'store'])->name('message');
 Route::get('/logout', [UsersController::class, 'logout'])->name('ap_logout');
+Route::get('/payement', [CommandeController::class, 'payement'])->name('payement');
 
 Route::post('/existEmail', [UsersController::class, 'existEmail'])->name('existEmail');
 

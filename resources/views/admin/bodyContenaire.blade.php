@@ -42,9 +42,9 @@
                     <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-users" aria-hidden="true"></i> Commandes</a>
                         <div class="collapsible-body left-sub-menu">
                             <ul>
-                                <li><a href="admin-user-all.html">Valide</a>
+                                <li><a href="{{route('commandeValide')}}">Valide</a>
                                 </li>
-                                <li><a href="admin-user-add.html">En cours</a>
+                                <li><a href="{{route('createCommande')}}">En cours</a>
                                 </li>
                             </ul>
                         </div>

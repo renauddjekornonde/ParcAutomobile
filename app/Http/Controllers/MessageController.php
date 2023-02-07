@@ -25,6 +25,6 @@ class MessageController extends Controller
     }
     public function getMessageById($id){
           $messageById = Message::findOrFail($id);
-          return view('admin.message', compact('messageById'));
+          return view('admin.readMessage', compact('messageById'));
     }
 }

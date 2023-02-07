@@ -124,6 +124,7 @@
                                     <tr>
                                         <th>Image</th>
                                         <th>Model</th>
+                                        <th>Prix</th>
                                         <th>Publier le</th>
                                         <th>Status</th>
                                         {{-- <th>View</th> --}}
@@ -132,23 +133,32 @@
                                 <tbody>
                                     @foreach ($voitures as $voiture)
                                     <tr>
-                                    @foreach ($cars as $voiture)
-                                        <td><span class="list-img">
-                                        @foreach($voiture->voiturePhotos as $car)
-                                        <img src="{{Storage::url($car->description)}}" alt="">
-                                        @endforeach
+                                     <td><span class="list-img">
+                                    @foreach ($cars as $photo)
+                                        {{-- @foreach($photo->voiturePhotos as $car) --}}
+                                        @if($photo->voitures_id==$voiture->id)
+                                        <img src="{{Storage::url($photo->description)}}" alt="">
+                                        @endif
+                                    @endforeach
                                         </span>
                                         </td>
-                                    @endforeach
 
 
                                          @foreach($models as $model)
+                                         @if($voiture->id==$model->voitures_id)
                                          <td>
                                             <a href="#"><span class="list-enq-name">
-                                            @foreach($model->models as $m)
-                                                {{$m->nom_model}}
-                                            @endforeach
+                                            {{-- @foreach($model->models as $m) --}}
+                                                {{$model->nom_model}}
+                                            {{-- @endforeach --}}
                                         </td>
+                                         <td>
+                                            <a href="#"><span class="list-enq-name">
+                                            {{-- @foreach($model->models as $m) --}}
+                                                {{$model->prix}} FCFA
+                                            {{-- @endforeach --}}
+                                        </td>
+                                        @endif
                                         @endforeach
 
                                         <td>

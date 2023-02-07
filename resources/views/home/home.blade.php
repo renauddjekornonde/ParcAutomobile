@@ -40,6 +40,7 @@
                 <div class="car_box">
                    <figure><img src={{Storage::url($image->description)}} alt="#"/></figure>
                    <a href="{{route('showPhoto',$image->id)}}"><h3>{{$image->photoModel->nom_model}}</h3></a>
+                   
                 </div>
              </div>
              @endforeach

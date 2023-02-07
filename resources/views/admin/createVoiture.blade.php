@@ -147,15 +147,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($voitures as $voiture)
+                                    @foreach($marques as $voiture)
                                         <tr>
-                                        @foreach ($marques as $marque)
-                                            <td><button type="button" data-toggle="modal" data-target="#photoModal" style="border:0px;" class="list-enq-name">{{$marque->voitureMarque->nom_marque}}</button>
+                                            <td><button type="button" data-toggle="modal" data-target="#{{$voiture->id}}" style="border:0px;" class="list-enq-name">{{$voiture->voitureMarque->nom_marque}}</button>
                                             </td>
-                                        @endforeach
 
-                                                <!-- Modal pour afficher les photos -->
-                                            <div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                              <!-- Modal pour afficher les photos -->
+                                              <div class="modal fade" id="{{$voiture->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
@@ -166,18 +164,19 @@
                                                     </div>
                                                     <div class="modal-body">
                                                     <!-- Boucle pour afficher chaque photo dans la liste -->
-                                                    @foreach ($cars as $voiture)
+                                                    @foreach ($cars as $voitures)
 
                                                     <div class="row">
-                                                     @foreach($voiture->voiturePhotos as $car)
+                                                     @foreach($voitures->voiturePhotos as $car)
                                                         <div class="col-md-3">
 
                                                             <img src="{{Storage::url($car->description)}}" class="img-thumbnail" >
                                                             <br>
                                                         </div>
                                                             @endforeach
+                                                        </div>
                                                     @endforeach
-                                                    </div>
+                                                    
                                                     </div>
                                                     <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
@@ -186,22 +185,21 @@
                                                 </div>
                                             </div>
                                         <!-- Fin Modal pour afficher les photos -->
+                                        {{-- @endforeach --}}
 
-                                            @foreach($models as $model)
-                                            <td><a href="#"><span class="list-enq-name">
-                                                @foreach($model->models as $m)
-                                                    {{$m->nom_model}}
-                                                @endforeach
+                                            @foreach($modele as $model)
+                                                {{-- @foreach($model->models as $m) --}}
+                                                @if($voiture->id==$model->voitures_id)
+
+                                                <td><span class="list-enq-name">
+                                                    {{$model->nom_model}}</span>
                                                 </td>
 
-
-                                            <td><span class="list-enq-name">
-                                                @foreach($model->models as $m)
-                                                    {{$m->couleur}}
-                                                @endforeach
-
-                                            </span>
-                                            </td>
+                                                <td><span class="list-enq-name">
+                                                    {{$model->couleur}}</span>
+                                                </td>
+                                                @endif
+                                                {{-- @endforeach --}}
                                             @endforeach
 
                                             <td>
@@ -271,10 +269,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        {{-- end modal pour modifier une voiture --}}
                                         @endif
                                     </tr>
-                                @endforeach
+                                    @endforeach
                             </tbody>
                             </table>
                         </div>

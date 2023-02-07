@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Admin;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+
 class AdminController extends Controller
 {
     //
     public function create(){
-        
+
         $users= User::get();
         //dump($marques);
         return View('admin.createUser', compact('users'));
@@ -19,7 +21,7 @@ class AdminController extends Controller
         $users= new User();
             $users->name=$input['nom'];
             $users->email=$input['email'];
-            $users->password=$input['password'];
+            $users->password= Hash::make($input['password']);
 
             if($input['statut']== "Admin"){
                 $users->statut=1;
@@ -66,7 +68,7 @@ class AdminController extends Controller
         $users->name= $request['nom'];
         $users->statut= $users->statut;
         $users->email= $request['email'];
-        $users->password= $request['password'];
+        $users->password= Hash::make($request['password']);
         $users->save();
         return redirect()->back()->with('success','Modification effectuer avec succes');
     }
